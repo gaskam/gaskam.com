@@ -7,7 +7,7 @@ header {
 }
 
 header.scroll {
-    border-bottom: solid 0.05rem var(--color-border-alpha);
+    border-bottom: solid 0.05rem var(--color-border);
 }
 
 .navbar {
@@ -167,5 +167,9 @@ svg {
 
     .plate {
         display: block;
+    }
+
+    .navbar {
+        padding: 0 0;
     }
 }
