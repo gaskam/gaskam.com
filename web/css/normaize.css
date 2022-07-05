@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Josefin+Slab:ital,wght@0,100;0,400;0,600;1,100;1,400;1,600&family=Major+Mono+Display&family=Sedgwick+Ave+Display&display=swap');
+
+:root{
+    --color-primary: #37515F;
+    --color-secondary: #9a0b26;
+    --color-text: #1F1F1F;
+    --color-link: #8277F8; 
+    --color-link-hover: #8e85f2;
+    --color-danger: #F65C51;
+    --color-success: #5A9367;
+    --color-warning: #ff9800;
+    --color-background: #F5F5F5;
+    --color-header: #F5F5F5;
+    --color-border: #4A6E82;
+
+    --font-primary: 'Comfortaa', cursive;
+    --font-style: 'Major Mono Display', monospace;
+    --font-big: 'Sedgwick Ave Display', cursive;
+    --font-small: 'Josefin Slab', serif;
+
+    --default: 0;
+    --transition: 0.3s ease-in-out;
+}
