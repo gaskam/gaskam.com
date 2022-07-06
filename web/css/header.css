@@ -166,6 +166,10 @@ svg {
         height: 100vh;
     }
 
+    header.scroll.open{
+        border-bottom: solid 0.05rem transparent;
+    }
+
     .navbar ul li {
         display: none;
     }
