@@ -10,4 +10,11 @@ jQuery(document).ready(function ($) {
         });
     })
 
+    $('.svg-menu').click(function(e){
+        e.preventDefault();
+        $('header').toggleClass('open');
+        $('.navbar ul li').toggleClass('open');
+        $('.navbar').toggleClass('open');
+    })
 });
+
