@@ -1,8 +1,10 @@
-.slider{
-    margin-bottom: 20px;
-    width: 100%;
-    height: 100%;
+.img-background {
+    background-image: url("https://galeries.be/wp-content/uploads/2022/01/10662-belle-photo05-c2021-studio-chizu.jpg");
     background-size: cover;
-    position: center;
-    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    margin-bottom: 30px;
 }
