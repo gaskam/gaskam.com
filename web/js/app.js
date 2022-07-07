@@ -1,3 +1,10 @@
+// Swup
+
+//import Swup from 'swup';
+//const swup = new Swup();
+
+// Jquery
+
 jQuery(document).ready(function ($) {
 
     $(function () {
@@ -15,6 +22,10 @@ jQuery(document).ready(function ($) {
         $('header').toggleClass('open');
         $('.navbar ul li').toggleClass('open');
         $('.navbar').toggleClass('open');
-    })
-});
+    });
 
+    $('.ajax').live('click', function(event){
+        event.preventDefault();
+        });
+    
+});

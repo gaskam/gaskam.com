@@ -32,6 +32,10 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- Swup -->
+
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
+
     <!------------------- CDN ------------------->
 
 </head>
@@ -44,10 +48,10 @@
             <h1 class="logo-header">Gaskam</h1> <!-- <img src="logo.png" class="logo"> -->
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Wiki</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#" class="ajax">Home</a></li>
+                <li><a href="#" class="ajax">Products</a></li>
+                <li><a href="#" class="ajax">Wiki</a></li>
+                <li><a href="#" class="ajax">About</a></li>
             </ul>
 
             <!-- SVG MENU -->
@@ -89,6 +93,10 @@
     </header>
 
     <content>
+
+        <div id="swup" class="transition-fade">
+            {% block body %}{% endblock %}
+        </div>
 
         <div class="container">
         <div class="img-background"></div>
