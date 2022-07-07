@@ -96,6 +96,6 @@ export class Timer {
         return this;
     }
 
-    // Callbacks functions
+    // Callbacks functions 
 
 }
