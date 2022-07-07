@@ -15,6 +15,7 @@ Transparent top and white/black to contrast with the rest of the page.
 ## Content
 
 Simple theme --> Light and dark mode.
+Nav with "History.pushState()" and "Swup.js"
 
 #### Home
 
