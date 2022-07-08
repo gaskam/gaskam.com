@@ -9,7 +9,7 @@ Transparent top and white/black to contrast with the rest of the page.
 
 * **Home** --> Default
 * **Products**
-* **Wiki**
+* **Docs**
 * **About**
 
 ## Content

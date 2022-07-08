@@ -1,8 +1,3 @@
-// Swup
-
-//import Swup from 'swup';
-//const swup = new Swup();
-
 // Jquery
 
 jQuery(document).ready(function ($) {
@@ -17,15 +12,10 @@ jQuery(document).ready(function ($) {
         });
     })
 
-    $('.svg-menu').click(function(e){
+    $('.svg-menu').click(function (e) {
         e.preventDefault();
         $('header').toggleClass('open');
         $('.navbar ul li').toggleClass('open');
         $('.navbar').toggleClass('open');
     });
-
-    $('.ajax').live('click', function(event){
-        event.preventDefault();
-        });
-    
 });

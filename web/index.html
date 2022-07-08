@@ -43,6 +43,7 @@
     <!-- Swup -->
 
     <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
+    <script defer src="js/swup.js"></script>
 
     <!------------------- CDN ------------------->
 
@@ -56,10 +57,10 @@
             <h1 class="logo-header">Gaskam</h1> <!-- <img src="logo.png" class="logo"> -->
 
             <ul>
-                <li><a href="#" class="ajax">Home</a></li>
-                <li><a href="#" class="ajax">Products</a></li>
-                <li><a href="#" class="ajax">Wiki</a></li>
-                <li><a href="#" class="ajax">About</a></li>
+                <li><a href="/web/index.html">Home</a></li>
+                <li><a href="/web/products.html">Products</a></li>
+                <li><a href="/web/docs.html">Docs</a></li>
+                <li><a href="/web/about.html">About</a></li>
             </ul>
 
             <!-- SVG MENU -->
@@ -102,65 +103,63 @@
 
     <content>
 
-        <div id="swup" class="transition-fade">
-            {% block body %}{% endblock %}
-        </div>
-
-        <div class="container">
-        <div class="img-background"></div>
-
+        <main id="swup" class="transition-fade">
+            <div class="container">
+                <div class="img-background"></div>
         
-    </div>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
-            doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
-            cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
-            voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
-            magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
-            optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
-            ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
-            laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
-            fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
-            consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo
-            commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit
-            cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic
-            dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus
-            adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
-            doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
-            cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
-            voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
-            magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
-            optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
-            ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
-            laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
-            fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
-            consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo
-            commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit
-            cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic
-            dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus
-            adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
-            doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
-            cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
-            voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
-            magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
-            optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
-            ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
-            laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
-            fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-            explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
-            consequatur fugiat autem ex, magnam labore cupiditate?</p>
+                
+            </div>
+        
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
+                    doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
+                    cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
+                    voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
+                    magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
+                    optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
+                    ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
+                    laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
+                    fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                    explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
+                    consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo
+                    commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit
+                    cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic
+                    dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus
+                    adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
+                    doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
+                    cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
+                    voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
+                    magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
+                    optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
+                    ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
+                    laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
+                    fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                    explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
+                    consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo
+                    commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit
+                    cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus adipisci hic
+                    dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam doloribus
+                    adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore cupiditate?Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio voluptates numquam
+                    doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex, magnam labore
+                    cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium, optio
+                    voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem ex,
+                    magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo laudantium,
+                    optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur fugiat autem
+                    ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo
+                    laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi consequatur
+                    fugiat autem ex, magnam labore cupiditate?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+                    explicabo laudantium, optio voluptates numquam doloribus adipisci hic dolore, odit cum quod quo commodi
+                    consequatur fugiat autem ex, magnam labore cupiditate?</p>
+        </main>
 
     </content>
 
