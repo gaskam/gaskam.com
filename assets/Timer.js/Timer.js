@@ -1,11 +1,14 @@
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.net
-// Version: 0.0.1 Pre-Alpha
+// Version: 0.0.2 Pre-Alpha
+// Released: Event gestionnary
+// TODO: Timing events triggering
 
 export class Timer {
     pauseAmount = 0;
     beginTime = null;
     paused = true;
+    callbacks = [];
     constructor(duration, options) {
         this.duration = duration;
         this.options = options || {};
@@ -96,6 +99,30 @@ export class Timer {
         return this;
     }
 
-    // Callbacks functions 
+    // Callbacks functions
+    addEventListener(event, callback){
+        this.callbacks.push(Object.defineProperty({}, event, {
+            value: callback,
+            writable: true
+        }));
+        return this;
+    }
+    on(event, callback){
+        return this.addEventListener(event, callback);
+    }
+
+    dispatchEvent(event){
+        this.callbacks.forEach((el)=>{
+            console.log(typeof el)
+            if(el.hasOwnProperty(event)){
+                el[event]();
+            }
+        });
+        return this;
+    }
+
+    emit(event){
+        return this.dispatchEvent(event);
+    }
 
 }
