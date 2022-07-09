@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "The access is protected ! Please do not force your way in or you will be prosecuted."
+AuthUserFile ../../private/.htpasswd
+require valid-user
