@@ -1,6 +1,6 @@
 // A nice, easy to use, timer, that provides powerful features
-// Made with ❤️ by Gaskam -> Gaskam.net
-// Version: 0.0.2 Pre-Alpha
+// Made with ❤️ by Gaskam -> Gaskam.dev
+// Version: 0.0.1 Pre-Alpha
 // Released: Event gestionnary
 // TODO: Timing events triggering
 
