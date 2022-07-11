@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gaskam/Gaskam.net/issues"
   },
-  "homepage": "https://github.com/Gaskam/Gaskam.net#readme"
+  "homepage": "https://github.com/Gaskam/Gaskam.net#readme",
+  "dependencies": {
+    "php": "^1.0.2"
+  }
 }

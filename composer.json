@@ -1,0 +1,11 @@
+{
+    "name": "gaskam/gaskam.net",
+    "description": "Website of Gaskam company",
+    "authors": [
+        {
+            "name": "Patafix",
+            "email": "project.patafix@gmail.com"
+        }
+    ],
+    "require": {}
+}
