@@ -1,5 +1,5 @@
 header {
-    background: var(--color-header);
+    background: var(--color-background);
     width: 100%;
     position: fixed;
     border-bottom: solid 0.05rem transparent;
