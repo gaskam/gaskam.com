@@ -5,15 +5,16 @@
 // TODO: Timing events triggering (on the fly)
 
 export class Timer {
-    pauseAmount = 0;
     beginTime = null;
+    pauseAmount = 0;
+    pauseBegin = null;
     paused = true;
     callbacks = [];
     _timeline = [];
     specialEventsRegistry = [];
     _currentTimeoutId = -1;
     options = {
-        eventPrecision: 25
+        eventPrecision: 0
     }
 
     now() {
@@ -136,6 +137,18 @@ export class Timer {
         if (this.paused) {
             this.paused = false;
             this.beginTime = this.now();
+            if (this.pauseBegin) {
+                let tmp1 = this.pauseBegin, tmp2 = this.beginTime;
+                this._timeline.forEach(function (tmp) {
+                    tmp[0] += tmp2 - tmp1;
+                });
+                this.checkEvents();
+            }
+            if (this.specialEventsRegistry.length) {
+                if (this.specialEventsRegistry.filter(tmp => tmp.type === "resume").length) {
+                    this.dispatchEvent("resume");
+                }
+            }
         }
         return this;
     }
@@ -144,8 +157,15 @@ export class Timer {
     }
     stop() {
         if (this.paused !== true) {
+            let tmp = this.now();
+            this.pauseBegin = tmp;
             this.paused = true;
-            this.pauseAmount += this.now() - this.beginTime;
+            this.pauseAmount += tmp - this.beginTime;
+            if (this.specialEventsRegistry.length) {
+                if (this.specialEventsRegistry.filter(tmp => tmp.type === "pause").length) {
+                    this.dispatchEvent("pause");
+                }
+            }
             return this;
         }
         return this;
@@ -157,6 +177,12 @@ export class Timer {
         this.pauseAmount = 0;
         this.paused = true;
         this.beginTime = null;
+        this._registerAllEvents();
+        if (this.specialEventsRegistry.length) {
+            if (this.specialEventsRegistry.filter(tmp => tmp.type === "reset").length) {
+                this.dispatchEvent("reset");
+            }
+        }
         return this;
     }
 
@@ -171,7 +197,9 @@ export class Timer {
 
     removeEventListener(event) {
         if (typeof event === "string") {
-            this.callbacks = this.callbacks.filter(tmp => tmp[0] !== "event");
+            this.callbacks = this.callbacks.filter(tmp => tmp[0] !== event);
+            this._timeline = this._timeline.filter(tmp => tmp[1] !== event);
+            this.specialEventsRegistry = this.specialEventsRegistry.filter(tmp => tmp != event);
             return this;
         }
         if (typeof event === "number") {
@@ -213,7 +241,9 @@ export class Timer {
         event[0].toLowerCase();
         let tmp = this.toMs(event[0]);
         if (tmp > 0) {
-            let nextTime = this.now() + tmp;
+            let tmp2 = this.now();
+            let nextTime = (this.timeLeft() % tmp) + tmp2;
+            if (nextTime == tmp2) nextTime = tmp;
             this._timelineInsert(nextTime, event[0]);
         } else {
             specialEventsRegistry.push(event[0]);
@@ -239,20 +269,23 @@ export class Timer {
     }
     // Events
     checkEvents() {
-        console.log("checkEvents");
-        while(this._timeline.length && this._timeline[0][0]+this.options.eventPrecision <= this.now()) {
-            console.log("event triggered: " + this._timeline[0][1]);
-            this.dispatchEvent(this._timeline[0][1]);
-            let tmp = this._timeline.shift();
-            this._registerEvent(tmp[1]);
+        if (this.paused != true) {
+            while (this._timeline.length && this._timeline[0][0] + this.options.eventPrecision <= this.now()) {
+                console.log("event triggered: " + this._timeline[0][1]);
+                this.dispatchEvent(this._timeline[0][1]);
+                let tmp = this._timeline.shift();
+                this._registerEvent(tmp[1]);
+            }
+            if (this.timeLeft() <= 0 && this.paused == false && this.specialEventsRegistry.filter(tmp => tmp === "end").length) {
+                this.dispatchEvent("end");
+                this.pause();
+            }
+            if (this._currentTimeoutId !== null && this._timeline.length) {
+                clearTimeout(this._currentTimeoutId);
+                if (this._timeline.length) this._currentTimeoutId = setTimeout(this.checkEvents.bind(this), this._timeline[0][0] - this.now() - this.options.eventPrecision / 2);
+            }
         }
-        if (this.timeLeft() <= 0 && this.paused == false) {
-            this.dispatchEvent("end");
-        }
-        if (this._currentTimeoutId !== null && this._timeline.length) {
-            clearTimeout(this._currentTimeoutId);
-            if (this._timeline.length) this._currentTimeoutId = setTimeout(this.checkEvents.bind(this), this._timeline[0][0] - this.now());
-        }
+        return this;
     }
 
 }
