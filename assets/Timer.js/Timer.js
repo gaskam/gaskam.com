@@ -1,6 +1,6 @@
 // A nice, easy to use, timer, that provides powerful features
 // Made with ❤️ by Gaskam -> Gaskam.dev
-// Version: 0.0.1 Pre-Alpha
+// Version: 0.0.2 Pre-Alpha
 // Released: Event gestionnary
 // TODO: Timing events triggering (on the fly)
 
@@ -126,12 +126,18 @@ export class Timer {
     }
 
     // Timer execution functions
+    get runningTimeMs() {
+        if (this.paused === true) return this.pauseAmount;
+        return this.pauseAmount + (this.now() - this.beginTime);
+    }
     runningTime(format) {
-        if (this.paused === true) return this.formatTime(this.pauseAmount, format);
-        return this.formatTime(this.pauseAmount + (this.now() - this.beginTime), format);
+        return this.formatTime(this.runningTimeMs, format);
+    }
+    get timeLeftMs() {
+        return this.duration - this.runningTimeMs;
     }
     timeLeft(format) {
-        return this.formatTime(this.duration - this.runningTime(), format);
+        return this.formatTime(this.timeLeftMs, format);
     }
     start() {
         if (this.paused) {
@@ -238,12 +244,12 @@ export class Timer {
     }
     _registerEvent(event) {
         if (typeof event !== Array) event = [event];
-        event[0].toLowerCase();
+        if (typeof event[0] == String) event[0].toLowerCase();
         let tmp = this.toMs(event[0]);
         if (tmp > 0) {
             let tmp2 = this.now();
             let nextTime = (this.timeLeft() % tmp) + tmp2;
-            if (nextTime == tmp2) nextTime = tmp;
+            if (nextTime == tmp2) nextTime = tmp + tmp2;
             this._timelineInsert(nextTime, event[0]);
         } else {
             specialEventsRegistry.push(event[0]);
@@ -288,4 +294,19 @@ export class Timer {
         return this;
     }
 
+}
+
+export class MountTimer extends Timer {
+    textBox;
+    constructor(duration, options) {
+        super(duration, options);
+    }
+    mount(selector, format, update = "1s") {
+        this.textBox = document.querySelector(selector);
+        format = format || "mm:ss";
+        super.addEventListener(update, () => {
+            console.log("1s triggered, updating text");
+            this.textBox.innerHTML = super.formatTime(super.timeLeft(), format);
+        });
+    }
 }
