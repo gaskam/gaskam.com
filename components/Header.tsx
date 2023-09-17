@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <>
             <Head>
-                <link rel="stylesheet" href="/header.css" />
+                <link rel="stylesheet" href="/css/header.css" />
             </Head>
             <header>
                 <h1 class="logo">Gaskam</h1>
@@ -12,17 +12,17 @@ export default function Header() {
                 <div class="nav">
                     <div class="Social">
                         <img
-                            src="/github.svg"
+                            src="/header/github.svg"
                             alt="the github logo"
                         />
                         <img
-                            src="/discord.svg"
+                            src="/header/discord.svg"
                             alt="the discord logo"
                         />
                     </div>
                     <span class="separator"></span>
                     <img
-                        src="/dev.svg"
+                        src="/header/dev.svg"
                         alt="the light theme logo"
                     />
                 </div>
