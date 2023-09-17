@@ -7,21 +7,25 @@ export default function Header() {
                 <link rel="stylesheet" href="/header.css" />
             </Head>
             <header>
-                <img
-                class="my-6"
-                src="/logo.svg"
-                width="128"
-                height="128"
-                alt="the Fresh logo: a sliced lemon dripping with juice"
-                />
+                <h1 class="logo">Gaskam</h1>
 
-                <img
-                class="my-6"
-                src="/logo.svg"
-                width="128"
-                height="128"
-                alt="the Fresh logo: a sliced lemon dripping with juice"
-                />
+                <div class="nav">
+                    <div class="Social">
+                        <img
+                            src="/github.svg"
+                            alt="the github logo"
+                        />
+                        <img
+                            src="/discord.svg"
+                            alt="the discord logo"
+                        />
+                    </div>
+                    <span class="separator"></span>
+                    <img
+                        src="/sun.svg"
+                        alt="the light theme logo"
+                    />
+                </div>
             </header>
         </>
     );

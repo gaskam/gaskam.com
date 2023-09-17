@@ -1,5 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Sedgwick+Ave+Display&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-*,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background: #f5f5f5;
+}
+
+.logo-acceuil > img {
+    transform: rotate(-13.4deg);
+    width: 79em;
+    height: 44em;
+    position: absolute;
+    top: 2em;
+    left: 0;
+}
+
+.logo-acceuil > span {
+    color: #fff;
+    text-align: center;
+    font-family: "Sedgwick Ave Display";
+    font-size: 230px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 15.5vw;
+    left: 5.5vw;
+    width: 61rem;
+    height: 27.5rem;
+    transform: rotate(-24deg);
+    text-transform: uppercase;
+}
+
+.home .citations {
+    position: absolute;
+    right: 5.94em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -123,4 +165,4 @@ html {
 }
 .hover:bg-gray-200:hover {
   background-color: #e5e7eb;
-}
+} */

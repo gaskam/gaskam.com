@@ -1,5 +1,54 @@
 header {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 4em;
+    background: rgba(245, 245, 245, 0.85);
+    backdrop-filter: blur(37.5px);
+}
+
+header .logo {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1em;
+
+    margin-left: 1.185em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+}
+
+header .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-right: 2.37em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+header span.separator {
+    width: 0;
+    height: 1.25em;
+    border-right: 0.0625em solid black;
+    margin: 0 1.88em 0 1.88em;
+}
+
+header .Social {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+header .Social > img:first-child {
+    margin-right: 1.56em;
+}
+
+header img {
+    flex-shrink: 0;
+    width: 1.625em;
+    height: 1.625em;
 }

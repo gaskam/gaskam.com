@@ -1,27 +1,20 @@
-import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 import Header from "../components/Header.tsx";
 
 export default function Home() {
-  const count = useSignal(3);
   return (
     <>
       <Header />
-      <div class="px-4 py-8 mx-auto bg-[#86efac]">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
+      <div className="home">
+        <div class="logo-acceuil">
           <img
-            class="my-6"
-            src="/logo.svg"
-            width="128"
-            height="128"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
+            src="/pastelGradient.svg"
+            alt="the background of the gaskam logo"
           />
-          <h1 class="text-4xl font-bold">Welcome to Fresh</h1>
-          <p class="my-4">
-            Try updating this message in the
-            <code class="mx-2">./routes/index.tsx</code> file, and refresh.
-          </p>
-          <Counter count={count} />
+          <span>Gaskam</span>
+        </div>
+        <div className="citations">
+            <span className="content">“Le débogage est deux fois plus difficile que la programmation. Si vous écrivez le code aussi intelligemment que possible, vous êtes, par définition, trop stupide pour déboguer.”</span>
+            <span className="author">Brian W. Kernighan</span>
         </div>
       </div>
     </>
