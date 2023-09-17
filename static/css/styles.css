@@ -95,8 +95,11 @@ body {
     transform: scale(1.1);
 }
 
-.home .placeholder {
-    height: 100vh;
-    z-index: -1;
-    position: relative;
+.separator {
+    height: 75px;
+    margin-top: 100vh;
+}
+
+.featured > img {
+    width: 100vw;
 }

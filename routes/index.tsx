@@ -28,7 +28,6 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="placeholder"></div>
       </div>
       <div className="separator"></div>
       <div className="featured">
