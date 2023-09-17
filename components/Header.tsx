@@ -22,7 +22,7 @@ export default function Header() {
                     </div>
                     <span class="separator"></span>
                     <img
-                        src="/sun.svg"
+                        src="/dev.svg"
                         alt="the light theme logo"
                     />
                 </div>

@@ -6,7 +6,9 @@ header {
     justify-content: space-between;
     height: 4em;
     background: rgba(245, 245, 245, 0.85);
-    backdrop-filter: blur(37.5px);
+    backdrop-filter: blur(30px);
+    position: fixed;
+    width: 100%;
 }
 
 header .logo {
@@ -32,8 +34,8 @@ header .nav {
 
 header span.separator {
     width: 0;
-    height: 1.25em;
-    border-right: 0.0625em solid black;
+    height: 26px;
+    border-right: 1px solid black;
     margin: 0 1.88em 0 1.88em;
 }
 
@@ -51,4 +53,11 @@ header img {
     flex-shrink: 0;
     width: 1.625em;
     height: 1.625em;
+    color: #000;
+    opacity: 1;
+}
+
+header img:hover {
+    opacity: 0.65;
+    cursor: pointer;
 }
