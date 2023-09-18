@@ -1,14 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Sedgwick+Ave+Display&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+:root {
+    --color-black: #000000;
+    --color-dark-gray: #1F1F1F;
+    --color-white: #FFFFFF;
+    --color-off-white: #F5F5F5;
+    --color-orange: #FC7C33;
+
+    --font-code: 'Source Code Pro', monospace;
+    --font-sedgwick: 'Sedgwick Ave Display';
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background: #f5f5f5;
+    background: var(--color-off-white);
+}
+
+html {
+    margin: 0;
+    padding: 0;
 }
 
 .logo-acceuil > img {
-    /* transform: rotate(-13.4deg); */
     width: 60.3vw;
     height: 85.6vh;
     position: absolute;
@@ -18,9 +33,9 @@ body {
 }
 
 .logo-acceuil > span {
-    color: #fff;
+    color: var(--color-white);
     text-align: center;
-    font-family: "Sedgwick Ave Display";
+    font-family: var(--font-sedgwick);
     font-size: 24.28vmin;
     font-style: normal;
     font-weight: 400;
@@ -37,11 +52,11 @@ body {
 .home .citations {
     position: absolute;
     right: 5.94em;
-    bottom: 12.87vh;
+    bottom: 13.87vh;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    font-family: 'Source Code Pro', monospace;
+    font-family: var(--font-code);
     text-align: right;
     width: 36rem;
     line-height: normal;
@@ -77,7 +92,7 @@ body {
 }
 
 .home .downArrow .downArrowHoverEffect{
-    background: #f5f5f5;
+    background: var(--color-off-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,7 +105,7 @@ body {
 }
 
 .home .downArrow .downArrowHoverEffect:hover {
-    background: #fff;
+    background: var(--color-white);
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -100,6 +115,74 @@ body {
     margin-top: 100vh;
 }
 
-.featured > img {
+.featured {
+    position: relative;
     width: 100vw;
+    height: 28.646vw;
+}
+
+.featured > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.over-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3.125vw 0 0 4.948vw;
+    color: var(--color-off-white);
+    font-family: var(--font-code);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.over-image > h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.667vw;
+    font-weight: 400;
+}
+
+.over-image > p {
+    margin: 0;
+    padding: 0;    
+    margin-top: 1.25vw;
+    max-width: 30.156vw;
+    min-width: 466px;
+    text-align: justify;
+    font-size: 1.25vw;
+}
+
+.play-pataland {
+    margin-top: 9vw;
+    width: 8.75em;
+    height: 3.125em; 
+    background: transparent;
+    border-radius: 0.3125rem;
+    border: 0.5px solid var(--color-off-white);
+    color: var(--color-off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out .1s;
+}
+
+.play-pataland > h3 {
+    margin: 0;
+    padding: 0;   
+    font-family: var(--font-code);
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.play-pataland:hover {
+    background: var(--color-off-white);
+    color: var(--color-dark-gray);
+    cursor: pointer;
 }
