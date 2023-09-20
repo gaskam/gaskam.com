@@ -48,7 +48,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Card></Card>
+      <Card title="Venez Jouer" content="La super card" linkHref="/hello.txt" linkText="Cliquez ici"></Card>
       <Card></Card>
     </>
   );
