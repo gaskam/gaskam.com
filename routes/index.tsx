@@ -48,8 +48,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Card title="Venez Jouer" content="La super card" linkHref="/hello.txt" linkText="Cliquez ici"></Card>
-      <Card></Card>
+      <Card title="DevTimer" content="Cette librairie TypeScript est d’une simpilcité... Vous allez adorer !" linkHref="/hello.txt" linkText="Tester une démo"></Card>
     </>
   );
 }

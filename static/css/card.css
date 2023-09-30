@@ -1,0 +1,55 @@
+.card {
+    margin: 100px;
+    font-family: 'Source Code Pro', monospace;
+    width: 290px;
+    height: 290px;
+    background: #252525;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 20px;
+    color: #f5f5f5;
+}
+
+.card .alignstart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.card .title {
+    margin: 24px 24px 13px 24px;
+    font-size: 26px;
+    max-width: 100%;
+}
+
+.card .content {
+    margin: 0 24px 0 24px;
+    font-size: 20px;
+    max-width: 100%;
+}
+
+.card .linkcontainer {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    padding: 0 24px 24px 24px;
+}
+
+.card .link {
+    font-size: 18px;
+    color: #01E6FF;
+    margin-right: 5px;
+}
+
+.card .rightlinkarrow {
+    color: #01E6FF;
+    width: 20px;
+    height: 20px;
+}
