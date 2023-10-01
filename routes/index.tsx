@@ -43,9 +43,9 @@ export default function Home() {
             installés et vous pourrez tester de nouveaux mode de jeu
             exclusifs...
           </p>
-          <div class="play-pataland" id="play-pataland">
+          <a href="https://pataland.gaskam.com"><div class="play-pataland" id="play-pataland">
             <h3>Jouer !</h3>
-          </div>
+          </div></a>
         </div>
       </div>
       <Card title="DevTimer" content="Cette librairie TypeScript est d’une simpilcité... Vous allez adorer !" linkHref="/hello.txt" linkText="Tester une démo"></Card>

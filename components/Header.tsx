@@ -11,20 +11,20 @@ export default function Header() {
 
                 <div class="nav">
                     <div class="Social">
-                        <img
+                        <a href="https://github.com/gaskam-com/"><img
                             src="/header/github.svg"
                             alt="the github logo"
-                        />
-                        <img
+                        /></a>
+                        <a href="http://discord.gaskam.com"><img
                             src="/header/discord.svg"
                             alt="the discord logo"
-                        />
+                        /></a>
                     </div>
                     <span class="separator"></span>
-                    <img
+                    <a href="https://dev.gaskam.com"><img
                         src="/header/dev.svg"
                         alt="the light theme logo"
-                    />
+                    /></a>
                 </div>
             </header>
         </>

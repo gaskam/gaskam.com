@@ -47,7 +47,7 @@ header .Social {
     justify-content: right;
 }
 
-header .Social > img:first-child {
+header .Social > a:first-child {
     margin-right: 1.56em;
 }
 
