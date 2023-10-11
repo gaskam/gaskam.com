@@ -15,7 +15,7 @@ document.querySelectorAll('.card').forEach(card => {
     });
 
     function Evolution(x) {
-        return 0.1 / (2*Math.exp((x*5/disableTime)+3));
+        return Math.exp(-3.218876 * x);
     }
 
     card.addEventListener("mouseleave", ()=>{
@@ -33,12 +33,12 @@ document.querySelectorAll('.card').forEach(card => {
         
             if (previousTimeStamp !== timeStamp) {
                 // Math.min() is used here to make sure the element stops at exactly 200px
-                let evolution = Evolution(elapsed);
+                let evolution = Evolution(elapsed / disableTime);
                 evolution = Math.max(Math.min(evolution, 1), 0);
                 card.style = `  --mouseX: ${-cardSize}px; 
                                 --mouseY: ${-cardSize}0px; 
-                                --angleX: ${evolution * mouseX}deg;
-                                --angleY: ${evolution * mouseY}0deg;`;
+                                --angleX: ${evolution * (-((mouseX / cardSize) - 0.5) * 4)}deg;
+                                --angleY: ${evolution * (((mouseY / cardSize) - 0.5) * 2)}deg;`;
             }
         
             if (elapsed < disableTime) {
@@ -47,13 +47,11 @@ document.querySelectorAll('.card').forEach(card => {
                 currentAnimation = window.requestAnimationFrame(step);
             }
         }
-        
+
         currentAnimation = window.requestAnimationFrame(step);
     });
 
     card.addEventListener("mouseenter", ()=>{
-        if (currentAnimation) {
-            window.cancelAnimationFrame(currentAnimation);
-        }
+        if (currentAnimation) window.cancelAnimationFrame(currentAnimation);
     });
 });
