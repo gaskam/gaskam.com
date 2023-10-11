@@ -190,3 +190,51 @@ a {
     color: var(--color-dark-gray);
     cursor: pointer;
 }
+
+.specialCard {
+    --card-background: #252525;
+    --card-size: 290px;
+    --card-hover-effect-size: 120px;
+    --angleX: 0deg;
+    --angleY: 0deg;
+}
+
+.specialCard {
+    margin: 100px;
+    font-family: 'Source Code Pro', monospace;
+    width: var(--card-size);
+    height: var(--card-size);
+    background: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    transform: perspective(300px) rotateX(var(--angleY)) rotateY(var(--angleX));
+}
+
+.specialCard .title {
+    margin: 4em 1.5em 0 1.5em;
+    font-size: 1.25em;
+}
+
+.specialCard a {
+    width: 8.75em;
+    height: 3.125em; 
+    margin-bottom: 2em;
+    background: transparent;
+    border-radius: 0.3125rem;
+    border: 0.5px solid var(--color-off-white);
+    color: var(--color-off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.specialCard a p {
+    font-size: 1.25em;
+    margin: 0;
+}

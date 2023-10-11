@@ -1,4 +1,4 @@
-document.querySelectorAll('.card').forEach(card => {
+document.querySelectorAll('.mouseAnimated').forEach(card => {
     const cardSize = 290;
     const disableTime = 200;
     let mouseX = 0;
@@ -20,9 +20,9 @@ document.querySelectorAll('.card').forEach(card => {
 
     card.addEventListener("mouseleave", ()=>{
         card.style = `  --mouseX: ${-cardSize}px; 
-                        --mouseY: ${-cardSize}0px; 
-                        --angleX: 0deg;
-                        --angleY: 0deg;`;
+                        --mouseY: ${-cardSize}px; 
+                        --angleX: ${-((mouseX / cardSize) - 0.5) * 4}deg;
+                        --angleY: ${((mouseY / cardSize) - 0.5) * 2}deg;`;
         let start, previousTimeStamp;
         
         function step(timeStamp) {

@@ -16,7 +16,7 @@ export default function Card(props: props) {
         <link rel="stylesheet" href="/css/card.css" key="card-css-injection" />
         <script src="/js/card-hover-effect.js" key="card-js-injection" defer></script>
       </Head>
-      <div className="card">
+      <div className="card mouseAnimated">
         <div className="alignstart">
           <span className="title">{props.title}</span>
           <span className="content">{props.content}</span>
