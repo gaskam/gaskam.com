@@ -235,6 +235,12 @@ h2 {
     justify-content: center;
 }
 
+.specialCard a:hover {
+    background: var(--color-off-white);
+    color: var(--color-dark-gray);
+    cursor: pointer;
+}
+
 .specialCard a p {
     font-size: 1.25em;
     margin: 0;

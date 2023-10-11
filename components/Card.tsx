@@ -3,10 +3,10 @@ import { Head } from "$fresh/runtime.ts";
 import IconArrowRight from "https://deno.land/x/tabler_icons_tsx@0.0.4/tsx/arrow-right.tsx";
 
 interface props extends JSX.HTMLAttributes {
-  title: string;
-  content: string;
-  linkText: string;
-  linkHref: string;
+  title?: string;
+  content?: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 export default function Card(props: props) {
