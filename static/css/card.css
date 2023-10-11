@@ -1,15 +1,50 @@
 .card {
+    --card-background: #252525;
+    --card-hover-effect-size: 120px;
+}
+
+.card {
     margin: 100px;
     font-family: 'Source Code Pro', monospace;
     width: 290px;
     height: 290px;
-    background: #252525;
+    background: var(--card-background);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     border-radius: 20px;
     color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    width: var(--card-hover-effect-size);
+    height: var(--card-hover-effect-size);
+    left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
+    top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
+    background: var(--card-background);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(calc(var(--card-hover-effect-size) *.8));
+    transition: background 0.8s ease;
+}
+
+.card:hover:before {
+    content: '';
+    position: absolute;
+    width: var(--card-hover-effect-size);
+    height: var(--card-hover-effect-size);
+    left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
+    top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
+    background: #1f0bd5;
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(calc(var(--card-hover-effect-size) *.8));
+    transition: background 0.4s ease;
 }
 
 .card .alignstart {
@@ -18,6 +53,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
+    z-index: 1;
 }
 
 .card .title {
@@ -40,6 +76,7 @@
     justify-content: flex-start;
     text-decoration: none;
     padding: 0 24px 24px 24px;
+    z-index: 1;
 }
 
 .card .link {
