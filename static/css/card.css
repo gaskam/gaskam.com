@@ -21,7 +21,6 @@
     position: relative;
     overflow: hidden;
     transform: perspective(300px) rotateX(var(--angleY)) rotateY(var(--angleX));
-    transition: transform 0.3s ease;
 }
 
 .card:before {
