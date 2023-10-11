@@ -1,13 +1,16 @@
 .card {
     --card-background: #252525;
+    --card-size: 290px;
     --card-hover-effect-size: 120px;
+    --angleX: 0deg;
+    --angleY: 0deg;
 }
 
 .card {
     margin: 100px;
     font-family: 'Source Code Pro', monospace;
-    width: 290px;
-    height: 290px;
+    width: var(--card-size);
+    height: var(--card-size);
     background: var(--card-background);
     display: flex;
     flex-direction: column;
@@ -17,6 +20,8 @@
     color: #f5f5f5;
     position: relative;
     overflow: hidden;
+    transform: perspective(300px) rotateX(var(--angleY)) rotateY(var(--angleX));
+    transition: transform 0.3s ease;
 }
 
 .card:before {
@@ -40,7 +45,7 @@
     height: var(--card-hover-effect-size);
     left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
     top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
-    background: #1f0bd5;
+    background: #0383cc;
     border-radius: 50%;
     z-index: 0;
     filter: blur(calc(var(--card-hover-effect-size) *.8));
