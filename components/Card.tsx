@@ -17,6 +17,7 @@ export default function Card(props: props) {
         linkHref,
         class: _class,
         className,
+        children,
         ...otherProps
     } = props;
     let classes;
@@ -24,6 +25,36 @@ export default function Card(props: props) {
         classes = "card mouseAnimated " + (_class ?? "") as string +
             (className ?? "");
     } else classes = "card mouseAnimated";
+
+    let titleComponent = <></>;
+    if (props.title) {
+        titleComponent = <h3 className="title">{props.title}</h3>;
+    }
+
+    let contentComponent = <></>;
+    if (props.content) {
+        contentComponent = <p className="content">{props.content}</p>;
+    }
+
+    let alignStartComponent = <></>;
+    if (props.content || props.title) {
+        alignStartComponent = (
+            <div className="alignstart">
+                {titleComponent}
+                {contentComponent}
+            </div>
+        );
+    }
+
+    let linkComponent = <></>;
+    if (props.linkHref && props.linkText) {
+        linkComponent = (
+            <a href={props.linkHref} className="linkcontainer">
+                <span className="link">{props.linkText}</span>
+                <IconArrowRight class="rightlinkarrow" />
+            </a>
+        );
+    }
     return (
         <>
             <Head>
@@ -40,14 +71,9 @@ export default function Card(props: props) {
                 </script>
             </Head>
             <div {...otherProps} className={classes}>
-                <div className="alignstart">
-                    <span className="title">{props.title}</span>
-                    <span className="content">{props.content}</span>
-                </div>
-                <a href={props.linkHref} className="linkcontainer">
-                    <span className="link">{props.linkText}</span>
-                    <IconArrowRight class="rightlinkarrow" />
-                </a>
+                {alignStartComponent}
+                {linkComponent}
+                {children}
             </div>
         </>
     );

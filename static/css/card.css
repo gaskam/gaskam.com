@@ -7,7 +7,6 @@
 }
 
 .card {
-    margin: 100px;
     font-family: 'Source Code Pro', monospace;
     width: var(--card-size);
     height: var(--card-size);
@@ -40,8 +39,6 @@
 .card:hover:before {
     content: '';
     position: absolute;
-    width: var(--card-hover-effect-size);
-    height: var(--card-hover-effect-size);
     left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
     top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
     background: #0383cc;
@@ -63,6 +60,7 @@
 .card .title {
     margin: 24px 24px 13px 24px;
     font-size: 26px;
+    font-weight: 400;
     max-width: 100%;
 }
 

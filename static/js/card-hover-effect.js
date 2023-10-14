@@ -1,5 +1,5 @@
 document.querySelectorAll('.mouseAnimated').forEach(card => {
-    const cardSize = 290;
+    const cardSize = card.offsetWidth;
     const disableTime = 200;
     let mouseX = 0;
     let mouseY = 0;

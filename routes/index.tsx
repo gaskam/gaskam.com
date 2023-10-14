@@ -56,42 +56,49 @@ export default function Home() {
             <div className="projects-title">
                 <h2>Nos Projets</h2>
             </div>
-            <Card
-                className="big-card"
-                title="Gaskam.com"
-                content="Ce magnifique site est probablement la démo la plus efficace pour vous montrer nos tallents de développeur front-end. Nous avons fait “gaskam.com” grâce à Fresh de Deno, pour la meilleure expérience utilisateur !"
-                linkHref="#"
-                linkText="J'adore !"
-            >
-            </Card>
-            <Card
-                title="DevTimer"
-                content="Cette librairie TypeScript est d’une simpilcité... Vous allez adorer !"
-                linkHref="/hello.txt"
-                linkText="Tester une démo"
-            >
-            </Card>
-            <Card
-                title="BeamRadio"
-                content='BeamRadio est une radio pour le grand "BeamNG.drive": ce grand jeu de simulation sans égal&nbsp;!'
-                linkHref="/hello.txt"
-                linkText="Télécharger"
-            >
-            </Card>
-            <Card
-                title="DevChrono"
-                content="Sur la même base que DevTimer, DevChrono est votre ami pour mesurer le temps facilement !"
-                linkHref="/hello.txt"
-                linkText="En voir plus"
-            >
-            </Card>
-            <div className="specialCard mouseAnimated">
-                <span className="title">
-                    C'est pour bientôt! En attendant, venez sur le Discord !
-                </span>
-                <a href="http://discord.gaskam.com/">
-                    <p>Y aller !</p>
-                </a>
+            <div className="cardContainer">
+                <Card
+                    className="big-card"
+                    title="Gaskam.com"
+                    content="Ce magnifique site est probablement la démo la plus efficace pour vous montrer nos tallents de développeur front-end. Nous avons fait “gaskam.com” grâce à Fresh de Deno, pour la meilleure expérience utilisateur !"
+                >
+                </Card>
+                <div className="toBottom">
+                    <div className="toRight">
+                        <Card
+                            title="DevTimer"
+                            content="Cette librairie TypeScript est d’une simpilcité... Vous allez adorer !"
+                            linkHref="/hello.txt"
+                            linkText="Tester une démo"
+                        >
+                        </Card>
+                        <Card
+                            title="BeamRadio"
+                            content='BeamRadio est une radio pour le grand "BeamNG.drive": ce grand jeu de simulation sans égal&nbsp;!'
+                            linkHref="/hello.txt"
+                            linkText="Télécharger"
+                        >
+                        </Card>
+                    </div>
+                    <div className="toRight">
+                        <Card
+                            title="DevChrono"
+                            content="Sur la même base que DevTimer, DevChrono est votre ami pour mesurer le temps facilement !"
+                            linkHref="/hello.txt"
+                            linkText="En voir plus"
+                        >
+                        </Card>
+                        <div className="specialCard mouseAnimated">
+                            <span className="title">
+                                C'est pour bientôt! En attendant, venez sur le
+                                Discord !
+                            </span>
+                            <a href="http://discord.gaskam.com/">
+                                <p>Y aller !</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );

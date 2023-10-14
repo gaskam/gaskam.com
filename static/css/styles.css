@@ -192,6 +192,44 @@ h2 {
     cursor: pointer;
 }
 
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 6.25em 0;
+}
+
+.toBottom {
+    margin-left: 20px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toRight {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card.big-card {
+    --card-size: 620px;
+    --card-hover-effect-size: 200px;
+}
+
+.card.big-card .title {
+    font-size: 32px;
+}
+
+.card.big-card .content {
+    font-size: 24px;
+}
+
 .specialCard {
     --card-background: #252525;
     --card-size: 290px;
@@ -201,7 +239,6 @@ h2 {
 }
 
 .specialCard {
-    margin: 100px;
     font-family: 'Source Code Pro', monospace;
     width: var(--card-size);
     height: var(--card-size);
