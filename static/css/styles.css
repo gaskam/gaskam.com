@@ -24,6 +24,8 @@ html {
 }
 
 a {
+    margin: 0;
+    padding: 0;
     text-decoration: none;
 }
 
@@ -358,7 +360,7 @@ h2 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 2em 0 6.25em 0;
+    margin: 2em 0 10em 0;
 }
 
 .social-button {

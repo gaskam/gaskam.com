@@ -1,4 +1,5 @@
 import Header from "../components/Header.tsx";
+import Footer from "../components/Footer.tsx";
 import Card from "../components/Card.tsx";
 
 export default function Home() {
@@ -137,29 +138,30 @@ export default function Home() {
                 <div class="about-title">
                     <h2 class="special-title">About</h2>
                 </div>
-                </div>
-                <div className="social">
-                    <a href="https://github.com/gaskam-com/">
+            </div>
+            <div className="social">
+                <a href="https://github.com/gaskam-com/">
                     <div className="social-button social-github">
                         <img src="/images/github.svg" alt="GitHub Button" />
                     </div>
-                    </a>
-                    <a href="http://discord.gaskam.com">
+                </a>
+                <a href="http://discord.gaskam.com">
                     <div className="social-button social-discord">
                         <img src="/images/discord.svg" alt="Discord Button" />
                     </div>
-                    </a>
-                    <a href="mailto:contact@gaskam.com">
+                </a>
+                <a href="mailto:contact@gaskam.com">
                     <div className="social-button social-mail">
                         <img src="/images/email.svg" alt="Mail Button" />
                     </div>
-                    </a>
-                    <a href="https://youtube.com/@gaskam/">
+                </a>
+                <a href="https://youtube.com/@gaskam/">
                     <div className="social-button social-youtube">
                         <img src="/images/youtube.svg" alt="YouTube Button" />
                     </div>
-                    </a>
+                </a>
             </div>
+            <Footer />
         </>
     );
 }
