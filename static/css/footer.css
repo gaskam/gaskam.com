@@ -15,7 +15,7 @@ footer {
     flex-direction: column;
 }
 
-h2 {
+footer h2 {
     margin: 0;
     color: #F5F5F5;
     text-align: center;
@@ -27,7 +27,7 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
+footer h3 {
     margin: 0;
     color: #FFF;
     text-align: center;
@@ -39,7 +39,7 @@ h3 {
     text-transform: uppercase;
 }
 
-a {
+footer a {
     margin: 0;
     text-decoration: none;
     color: #FFF;
@@ -53,11 +53,11 @@ a {
     opacity: 1;
 }
 
-a:hover {
+footer a:hover {
     opacity: 0.8;
 }
 
-.content {
+footer .content {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -65,14 +65,14 @@ a:hover {
     gap: 700px;
 }
 
-.nav {
+footer .nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
 }
 
-.page-nav {
+footer .page-nav {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -80,7 +80,7 @@ a:hover {
     gap: 150px;
 }
 
-.home, .projets, .about {
+footer .home, .projets, .about {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -88,21 +88,21 @@ a:hover {
     gap: 5px;
 }
 
-.links {
+footer .links {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
-.title {
+footer .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.title img {
+footer .title img {
     width: 20px;
     height: 20px;
     margin: 0 0 0 5px;
