@@ -8,6 +8,9 @@
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "fmt": {
+    "indentWidth": 4
+  },
   "imports": {
     "$fresh/": "https://deno.land/x/fresh@1.5.1/",
     "preact": "https://esm.sh/preact@10.18.1",
