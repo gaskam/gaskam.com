@@ -100,6 +100,66 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div class="about-section">
+                <div class="github-avatars">
+                    <img
+                        class="BotMaker-pp"
+                        src="https://avatars.githubusercontent.com/u/72702161?v=4"
+                        alt="the BotMaker's avatar"
+                    />
+                    <img
+                        class="Patafix-pp"
+                        src="https://avatars.githubusercontent.com/u/87929402?v=4"
+                        alt="the Patafix's avatar"
+                    />
+                </div>
+                <div class="about-content">
+                    <p>
+                        Nous nous présentons, BotMaker et Patafix, deux jeunes
+                        développeurs français, encore étudiants, avec de grandes
+                        ambitions.
+                    </p>
+
+                    <p>
+                        Nous faisons des projets principalement pour s’amuser et
+                        relever de nouveaux défis. On assure maintenant une
+                        grande polyvalence avec une maîtrise de divers langages
+                        de programmation, tels que : JavaScript, TypeScript,
+                        HTML, CSS, Lua et Python.
+                    </p>
+
+                    <p>
+                        Enfin, on vous invite à jeter un coup d’œil à nos
+                        différents réseaux, et n’hésitez pas à nous contacter à
+                        l’aide des informations ci-dessous.
+                    </p>
+                </div>
+                <div class="about-title">
+                    <h2 class="special-title">About</h2>
+                </div>
+                </div>
+                <div className="social">
+                    <a href="https://github.com/gaskam-com/">
+                    <div className="social-button social-github">
+                        <img src="/images/github.svg" alt="GitHub Button" />
+                    </div>
+                    </a>
+                    <a href="http://discord.gaskam.com">
+                    <div className="social-button social-discord">
+                        <img src="/images/discord.svg" alt="Discord Button" />
+                    </div>
+                    </a>
+                    <a href="mailto:contact@gaskam.com">
+                    <div className="social-button social-mail">
+                        <img src="/images/email.svg" alt="Mail Button" />
+                    </div>
+                    </a>
+                    <a href="https://youtube.com/@gaskam/">
+                    <div className="social-button social-youtube">
+                        <img src="/images/youtube.svg" alt="YouTube Button" />
+                    </div>
+                    </a>
+            </div>
         </>
     );
 }

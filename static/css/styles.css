@@ -288,3 +288,104 @@ h2 {
     text-align: center;
     margin: 6.25em 0 6.25em 0;
 }
+
+.about-section {
+    width: 100%;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25em 0 0 0;
+}
+
+.github-avatars {
+    margin: 0 0 50em 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.github-avatars > img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 0.5px solid var(--color-black);
+}
+
+.BotMaker-pp {
+    margin: 11em 20em 0 0;
+    transform: rotate(-15deg); 
+}
+
+.Patafix-pp {
+    transform: rotate(5deg); 
+}
+
+.about-content {
+    margin: 0;
+    width: 884px;
+    align-items: center;
+
+    color: #000;
+    text-align: justify;
+    font-family: var(--font-code);
+    font-size: 1.75em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.about-title {
+    position: absolute;
+    margin: 0 0 45em 65em;
+    transform: rotate(30deg); 
+}
+
+.special-title {
+    color: #FC7C33;
+    text-align: center;
+    font-family: var(--font-sedgwick);
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal; 
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 0 6.25em 0;
+}
+
+.social-button {
+    width: 50px;
+    height: 50px;
+    margin: 0 40px 0 40px;
+    border-radius: 50%;
+    border: 0.5px solid var(--color-black);
+    cursor: pointer;
+    background: var(--color-off-white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-button > img {
+    width: 30px;
+    height: 30px;
+}
+
+.social-discord {
+    background: #5865F2;
+    border: 0.5px solid #5865F2;
+}
+
+.social-mail {
+    background: #FC7C33;
+    border: 0.5px solid #FC7C33;
+}
