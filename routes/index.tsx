@@ -10,7 +10,7 @@ export default function Home() {
             <div className="home">
                 <div class="logo-acceuil">
                     <img
-                        src="/images/pastelGradient.svg"
+                        src="/images/gaskam-logo-min.png"
                         alt="the background of the gaskam logo"
                     />
                     {/* <span>Gaskam</span> */}
