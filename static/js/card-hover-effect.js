@@ -1,5 +1,6 @@
 document.querySelectorAll('.mouseAnimated').forEach(card => {
     const cardSize = card.offsetWidth;
+    const hoverFactor = parseFloat(card.getAttribute("data-hover-factor")) || 2;
     const disableTime = 200;
     let mouseX = 0;
     let mouseY = 0;
@@ -10,8 +11,8 @@ document.querySelectorAll('.mouseAnimated').forEach(card => {
 
         card.style = `  --mouseX: ${mouseX}px; 
                         --mouseY: ${mouseY}px; 
-                        --angleX: ${-((mouseX / cardSize) - 0.5) * 4}deg;
-                        --angleY: ${((mouseY / cardSize) - 0.5) * 2}deg;`;
+                        --angleX: ${-((mouseX / cardSize) - 0.5) * hoverFactor * 2}deg;
+                        --angleY: ${((mouseY / cardSize) - 0.5) * hoverFactor}deg;`;
     });
 
     function Evolution(x) {
@@ -21,8 +22,8 @@ document.querySelectorAll('.mouseAnimated').forEach(card => {
     card.addEventListener("mouseleave", ()=>{
         card.style = `  --mouseX: ${-cardSize}px; 
                         --mouseY: ${-cardSize}px; 
-                        --angleX: ${-((mouseX / cardSize) - 0.5) * 4}deg;
-                        --angleY: ${((mouseY / cardSize) - 0.5) * 2}deg;`;
+                        --angleX: ${-((mouseX / cardSize) - 0.5) * hoverFactor * 2}deg;
+                        --angleY: ${((mouseY / cardSize) - 0.5) * hoverFactor}deg;`;
         let start, previousTimeStamp;
         
         function step(timeStamp) {
@@ -37,8 +38,8 @@ document.querySelectorAll('.mouseAnimated').forEach(card => {
                 evolution = Math.max(Math.min(evolution, 1), 0);
                 card.style = `  --mouseX: ${-cardSize}px; 
                                 --mouseY: ${-cardSize}0px; 
-                                --angleX: ${evolution * (-((mouseX / cardSize) - 0.5) * 4)}deg;
-                                --angleY: ${evolution * (((mouseY / cardSize) - 0.5) * 2)}deg;`;
+                                --angleX: ${evolution * (-((mouseX / cardSize) - 0.5) * hoverFactor * 2)}deg;
+                                --angleY: ${evolution * (((mouseY / cardSize) - 0.5) * hoverFactor)}deg;`;
             }
         
             if (elapsed < disableTime) {
