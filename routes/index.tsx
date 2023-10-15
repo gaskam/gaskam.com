@@ -23,16 +23,16 @@ export default function Home() {
                     </span>
                     <span className="author">Brian W. Kernighan</span>
                 </div>
-                <a href="#">
-                    <div className="downArrow">
-                        <div className="downArrowHoverEffect">
-                            <img
-                                src="/images/downArrow.svg"
-                                alt="the background of the gaskam logo"
-                            />
-                        </div>
+                <div className="downArrow">
+                    <a href="#">
+                    <div className="downArrowHoverEffect">
+                        <img
+                            src="/images/downArrow.svg"
+                            alt="the background of the gaskam logo"
+                        />
                     </div>
-                </a>
+                    </a>
+                </div>
             </div>
             <div className="separator"></div>
             <div className="featured">

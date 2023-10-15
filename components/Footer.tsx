@@ -49,7 +49,7 @@ export default function Footer() {
                         <a target="_blank" href="https://gaskam.com">Gaskam</a>
                         <a target="_blank" href="http://discord.gaskam.com">Discord</a>
                         <a target="_blank" href="https://dev.gaskam.com">Développeur</a>
-                        <a target="_blank" href="https://api.gaskam.com">API</a>
+                        <a target="_blank" href="https://api.gaskam.com">API</a> 
                     </div>
                 </div>
                 <div className="copyright">

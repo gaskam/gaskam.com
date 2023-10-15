@@ -63,7 +63,7 @@ h2 {
     text-transform: uppercase;
 }
 
-.home .citations {
+.citations {
     position: absolute;
     right: 5.94em;
     bottom: 13.87vh;
@@ -76,18 +76,18 @@ h2 {
     line-height: normal;
 }
 
-.home .citations > .content {
+.citations > .content {
     font-weight: 400;
     font-size: 1.875rem;
     margin-bottom: 1.875rem;
 }
 
-.home .citations > .author {
+.citations > .author {
     font-size: 1.5rem;
     font-weight: 300;
 }
 
-.home .downArrow {
+.downArrow {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,12 +100,12 @@ h2 {
     z-index: -1;
 }
 
-.home .downArrow img {
+.downArrow img {
     width: 27.6px;
     height: 27.6px;
 }
 
-.home .downArrow .downArrowHoverEffect{
+.downArrowHoverEffect{
     background: var(--color-off-white);
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@ h2 {
     transition: all .1s ease-in-out;
 }
 
-.home .downArrow .downArrowHoverEffect:hover {
+.downArrowHoverEffect:hover {
     background: var(--color-white);
     cursor: pointer;
     transform: scale(1.1);
