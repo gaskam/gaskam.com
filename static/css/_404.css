@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Sedgwick+Ave+Display&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+error404 body {
+    font-family: "Code-Source-Pro", monospace;
+    align-items: center;
+    justify-content: center;
+    width: 100%;;
+    padding: 15%;
+}
+
+error404 .content {
+    width: 100vw;
+    background: #f5f5f5;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 5em 0 5em 0;
+}
+
+error404 .content img {
+    width: 400px;
+    margin: 5em;
+}
+
+error404 h1 {
+    font-family: "Code-Source-Pro", monospace;
+    font-size: 2em;
+    font-weight: 600;
+    color: #1f1f1f;
+    margin: 0 0 2em 0;
+}
+
+error404 p {
+    font-family: "Code-Source-Pro", monospace;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 1em;
+}
+
+error404 a {
+    font-family: "Code-Source-Pro", monospace;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #1f1f1f;
+    margin: 1em;
+    text-decoration: none;
+}
+
+error404 a:hover {
+    color: #252525;
+    text-decoration: underline;
+}
