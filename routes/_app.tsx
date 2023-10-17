@@ -28,6 +28,7 @@ return (
     <meta name="description"
         content="Gaskam est un petit groupe composé de BotMaker et Patafix, deux jeunes développeurs français, encore étudiants, avec de grandes ambitions. Nous faisons des projets en tout genre en JavaScript, TypeScript, HTML, CSS, Lua et Python."/>
     <meta name="author" content="Gaskam"/>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico"></link>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaskam - Official Website</title>
