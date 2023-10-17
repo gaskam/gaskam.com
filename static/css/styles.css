@@ -21,6 +21,7 @@ body {
 html {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -135,6 +136,12 @@ h2 {
     height: 28.646vw;
 }
 
+.featured .anchor {
+    position: relative;
+    height: 0;
+    top: -15vh;
+}
+
 .featured > img {
     position: absolute;
     top: 0;
@@ -166,16 +173,6 @@ h2 {
 
 .play-pataland {
     margin-top: 9vw;
-    width: 8.75em;
-    height: 3.125em; 
-    background: transparent;
-    border-radius: 0.3125rem;
-    border: 0.5px solid var(--color-off-white);
-    color: var(--color-off-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all ease-in-out .1s;
 }
 
 .play-pataland > h3 {
@@ -186,12 +183,6 @@ h2 {
     font-style: normal;
     font-weight: 400;
     line-height: normal; 
-}
-
-.play-pataland:hover {
-    background: var(--color-off-white);
-    color: var(--color-dark-gray);
-    cursor: pointer;
 }
 
 .cardContainer {
@@ -230,9 +221,28 @@ h2 {
 
 .card.big-card .content {
     font-size: 24px;
+    line-height: 1.4em;
 }
 
-.specialCard {
+.card.big-card img {
+    z-index: 1;
+}
+
+.card.big-card .Button {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    z-index: 2;
+    border: 0.5px solid var(--color-dark-gray);
+    color: var(--color-dark-gray);
+}
+
+.card.big-card .Button:hover {
+    background: var(--color-dark-gray);
+    color: var(--color-off-white);
+}
+
+.card.specialCard {
     --card-background: #252525;
     --card-size: 290px;
     --card-hover-effect-size: 120px;
@@ -240,7 +250,7 @@ h2 {
     --angleY: 0deg;
 }
 
-.specialCard {
+.card.specialCard {
     font-family: 'Source Code Pro', monospace;
     width: var(--card-size);
     height: var(--card-size);
@@ -256,39 +266,53 @@ h2 {
     transform: perspective(300px) rotateX(var(--angleY)) rotateY(var(--angleX));
 }
 
-.specialCard .title {
+.card.specialCard::before {
+    display: none;
+}
+
+.card.specialCard:hover::before {
+    left: 0;
+    top: 0;
+}
+
+.specialCard .decoration {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.specialCard .decoration.topleft {
+    top: -30px;
+    left: -30px;
+    background: #235EB7;
+}
+
+.specialCard .decoration.bottomright {
+    bottom: -30px;
+    right: -30px;
+    background: #2623B7;
+}
+
+.card.specialCard .content {
     margin: 4em 1.5em 0 1.5em;
     font-size: 1.25em;
 }
 
-.specialCard a {
-    width: 8.75em;
-    height: 3.125em; 
+.card.specialCard .Button {
     margin-bottom: 2em;
-    background: transparent;
-    border-radius: 0.3125rem;
-    border: 0.5px solid var(--color-off-white);
-    color: var(--color-off-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.specialCard a:hover {
-    background: var(--color-off-white);
-    color: var(--color-dark-gray);
-    cursor: pointer;
-}
-
-.specialCard a p {
+.card.specialCard a p {
     font-size: 1.25em;
     margin: 0;
 }
 
 .projects-title {
-    padding: 0;
+    margin: 0;
     text-align: center;
-    margin: 6.25em 0 6.25em 0;
+    padding: 6.25em 0 6.25em 0;
 }
 
 .about-section {
@@ -375,6 +399,11 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.social-button:hover {
+    transform: scale(1.05);
+    transition: transform .1s ease-in-out;
 }
 
 .social-button > img {

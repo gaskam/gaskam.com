@@ -1,12 +1,24 @@
 import { JSX } from "preact";
-import { IS_BROWSER } from "$fresh/runtime.ts";
+import { Head } from "$fresh/runtime.ts";
 
-export function Button(props: JSX.HTMLAttributes<HTMLButtonElement>) {
+export default function Button(
+    { class: _class, className, children, ...props }: JSX.HTMLAttributes<
+        HTMLAnchorElement
+    >,
+) {
+    let classes;
+    if (_class ?? className) {
+        classes = "Button " + (_class ?? "") as string +
+            (className ?? "");
+    } else classes = "Button";
     return (
-        <button
-            {...props}
-            disabled={!IS_BROWSER || props.disabled}
-            class="px-2 py-1 border-gray-500 border-2 rounded bg-white hover:bg-gray-200 transition-colors"
-        />
+        <>
+            <Head>
+                <link rel="stylesheet" href="/css/Button.css" key="Button-css-injection" />
+            </Head>
+            <a {...props} className={classes}>
+                {children}
+            </a>
+        </>
     );
 }

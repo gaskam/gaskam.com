@@ -15,9 +15,9 @@ export default function Footer() {
                         <div class="page-nav">
                             <div className="home">
                                 <h3>Home</h3>
-                                <a href="#PataLand">PataLand</a>
-                                <a href="#Projets">Projets</a>
-                                <a href="#About">About</a>
+                                <a href="#pataland">PataLand</a>
+                                <a href="#projects">Projets</a>
+                                <a href="#about">About</a>
                             </div>
                             <div className="projets">
                                 <h3>Projets</h3>
@@ -37,7 +37,7 @@ export default function Footer() {
                                     GitHub
                                 </a>
                                 <a href="mailto:contact@gaskam.com">Contact</a>
-                                <a href="https://patreon/gaskam">Soutenir</a>
+                                <a href="https://patreon.com/gaskam">Soutenir</a>
                             </div>
                         </div>
                     </div>

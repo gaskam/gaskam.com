@@ -1,5 +1,6 @@
 import Header from "../components/Header.tsx";
 import Card from "../components/Card.tsx";
+import Button from "../components/Button.tsx";
 import Footer from "../components/Footer.tsx";
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
             <div className="home">
                 <div class="logo-acceuil">
                     <img
-                        src="/images/pastelGradient.svg"
+                        src="/images/gaskam-logo-min.png"
                         alt="the background of the gaskam logo"
                     />
                     {/* <span>Gaskam</span> */}
@@ -24,18 +25,19 @@ export default function Home() {
                     <span className="author">Brian W. Kernighan</span>
                 </div>
                 <div className="downArrow">
-                    <a href="#">
-                    <div className="downArrowHoverEffect">
-                        <img
-                            src="/images/downArrow.svg"
-                            alt="the background of the gaskam logo"
-                        />
-                    </div>
+                    <a href="#pataland">
+                        <div className="downArrowHoverEffect">
+                            <img
+                                src="/images/downArrow.svg"
+                                alt="the background of the gaskam logo"
+                            />
+                        </div>
                     </a>
                 </div>
             </div>
             <div className="separator"></div>
             <div className="featured">
+                <div className="anchor" id="pataland"></div>
                 <img
                     src="/images/pataland-hight.jpg"
                     alt="the PataLand presentation poster"
@@ -48,21 +50,29 @@ export default function Home() {
                         nouveaux mode de jeu exclusifs...
                     </p>
                     <a href="https://pataland.gaskam.com">
-                        <div class="play-pataland" id="play-pataland">
+                        <Button class="play-pataland" id="play-pataland">
                             <h3>Jouer !</h3>
-                        </div>
+                        </Button>
                     </a>
                 </div>
             </div>
-            <div className="projects-title">
+            <div className="projects-title" id="projects">
                 <h2>Nos Projets</h2>
             </div>
             <div className="cardContainer">
                 <Card
                     className="big-card"
                     title="Gaskam.com"
+                    hoverFactor={0.5}
                     content="Ce magnifique site est probablement la démo la plus efficace pour vous montrer nos tallents de développeur front-end. Nous avons fait “gaskam.com” grâce à Fresh de Deno, pour la meilleure expérience utilisateur !"
                 >
+                    <img
+                        src="/images/cloud.svg"
+                        alt="the background of the gaskam logo"
+                    />
+                    <Button href="https://patreon.com/gaskam">
+                        <p>J'adore !</p>
+                    </Button>
                 </Card>
                 <div className="toBottom">
                     <div className="toRight">
@@ -89,18 +99,21 @@ export default function Home() {
                             linkText="En voir plus"
                         >
                         </Card>
-                        <div className="specialCard mouseAnimated">
-                            <span className="title">
-                                C'est pour bientôt! En attendant, venez sur le
-                                Discord !
-                            </span>
-                            <a href="http://discord.gaskam.com/">
+                        <Card
+                            className="specialCard"
+                            content="C'est pour bientôt! En attendant, venez sur le
+                                Discord !"
+                        >
+                            <div className="decoration topleft"></div>
+                            <Button href="http://discord.gaskam.com">
                                 <p>Y aller !</p>
-                            </a>
-                        </div>
+                            </Button>
+                            <div className="decoration bottomright"></div>
+                        </Card>
                     </div>
                 </div>
             </div>
+            <div className="aboutAnchor" id="about"></div>
             <div class="about-section">
                 <div class="github-avatars">
                     <img

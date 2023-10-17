@@ -27,8 +27,8 @@
     position: absolute;
     width: var(--card-hover-effect-size);
     height: var(--card-hover-effect-size);
-    left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
-    top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
+    left: var(--mouseX);
+    top: var(--mouseY);
     background: var(--card-background);
     border-radius: 50%;
     z-index: 0;
@@ -37,8 +37,6 @@
 }
 
 .card:hover:before {
-    content: '';
-    position: absolute;
     left: calc(var(--mouseX) - calc(var(--card-hover-effect-size) / 2));
     top: calc(var(--mouseY) - calc(var(--card-hover-effect-size) / 2));
     background: #0383cc;

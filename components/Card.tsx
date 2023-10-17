@@ -7,6 +7,7 @@ interface props extends JSX.HTMLAttributes<HTMLDivElement> {
     content?: string;
     linkText?: string;
     linkHref?: string;
+    hoverFactor?: number;
 }
 
 export default function Card(props: props) {
@@ -18,6 +19,7 @@ export default function Card(props: props) {
         class: _class,
         className,
         children,
+        hoverFactor = 2,
         ...otherProps
     } = props;
     let classes;
@@ -55,6 +57,8 @@ export default function Card(props: props) {
             </a>
         );
     }
+
+
     return (
         <>
             <Head>
@@ -70,7 +74,7 @@ export default function Card(props: props) {
                 >
                 </script>
             </Head>
-            <div {...otherProps} className={classes}>
+            <div {...otherProps} className={classes} data-hover-factor={hoverFactor}>
                 {alignStartComponent}
                 {linkComponent}
                 {children}
