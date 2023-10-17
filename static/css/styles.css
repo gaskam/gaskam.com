@@ -45,6 +45,7 @@ h2 {
     top: 64px;
     left: 4.43vw;
     z-index: -1;
+    object-fit: contain;
 }
 
 .logo-acceuil > span {
