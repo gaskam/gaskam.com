@@ -8,7 +8,7 @@ export default function Header() {
             </Head>
             <header>
                 <a href="#">
-                    <h1 class="logo">Gaskam</h1>
+                    <h1 class="page-name">Gaskam</h1>
                 </a>
 
                 <div class="nav">

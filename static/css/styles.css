@@ -38,7 +38,7 @@ h2 {
     font-family: var(--font-code);
 }
 
-.logo-acceuil > img {
+.homeLogo > img {
     width: 60.3vw;
     height: 85.6vh;
     position: absolute;
@@ -48,7 +48,7 @@ h2 {
     object-fit: contain;
 }
 
-.logo-acceuil > span {
+.homeLogo > span {
     color: var(--color-white);
     text-align: center;
     font-family: var(--font-sedgwick);
@@ -65,7 +65,7 @@ h2 {
     text-transform: uppercase;
 }
 
-.citations {
+.quote {
     position: absolute;
     right: 5.94em;
     bottom: 13.87vh;
@@ -78,13 +78,13 @@ h2 {
     line-height: normal;
 }
 
-.citations > .content {
+.quote > .content {
     font-weight: 400;
     font-size: 1.875rem;
     margin-bottom: 1.875rem;
 }
 
-.citations > .author {
+.quote > .author {
     font-size: 1.5rem;
     font-weight: 300;
 }
@@ -150,7 +150,7 @@ h2 {
     width: 100%;
 }
 
-.over-image {
+.overImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -162,7 +162,7 @@ h2 {
     line-height: normal;
 }
 
-.over-image > p {
+.overImage > p {
     margin: 0;
     padding: 0;    
     margin-top: 1.25vw;
@@ -172,11 +172,11 @@ h2 {
     font-size: 1.25vw;
 }
 
-.play-pataland {
+.playPataland {
     margin-top: 9vw;
 }
 
-.play-pataland > h3 {
+.playPataland > h3 {
     margin: 0;
     padding: 0;   
     font-family: var(--font-code);
@@ -211,25 +211,25 @@ h2 {
     justify-content: space-between;
 }
 
-.card.big-card {
+.card.bigCard {
     --card-size: 620px;
     --card-hover-effect-size: 200px;
 }
 
-.card.big-card .title {
+.card.bigCard .title {
     font-size: 32px;
 }
 
-.card.big-card .content {
+.card.bigCard .content {
     font-size: 24px;
     line-height: 1.4em;
 }
 
-.card.big-card img {
+.card.bigCard img {
     z-index: 1;
 }
 
-.card.big-card .Button {
+.card.bigCard .Button {
     position: absolute;
     bottom: 2em;
     right: 2em;
@@ -238,7 +238,7 @@ h2 {
     color: var(--color-dark-gray);
 }
 
-.card.big-card .Button:hover {
+.card.bigCard .Button:hover {
     background: var(--color-dark-gray);
     color: var(--color-off-white);
 }
@@ -284,13 +284,13 @@ h2 {
     z-index: -1;
 }
 
-.specialCard .decoration.topleft {
+.specialCard .decoration.topLeft {
     top: -30px;
     left: -30px;
     background: #235EB7;
 }
 
-.specialCard .decoration.bottomright {
+.specialCard .decoration.bottomRight {
     bottom: -30px;
     right: -30px;
     background: #2623B7;
@@ -310,13 +310,13 @@ h2 {
     margin: 0;
 }
 
-.projects-title {
+.projectsTitle {
     margin: 0;
     text-align: center;
     padding: 6.25em 0 6.25em 0;
 }
 
-.about-section {
+.aboutSection {
     width: 100%;
     max-height: 600px;
     display: flex;
@@ -325,7 +325,7 @@ h2 {
     margin: 25em 0 0 0;
 }
 
-.github-avatars {
+.githubAvatars {
     margin: 0 0 50em 0;
     display: flex;
     flex-direction: row;
@@ -333,7 +333,7 @@ h2 {
     justify-content: center;
 }
 
-.github-avatars > img {
+.githubAvatars > img {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -341,16 +341,16 @@ h2 {
     border: 0.5px solid var(--color-black);
 }
 
-.BotMaker-pp {
+.avatarBotMaker {
     margin: 11em 20em 0 0;
     transform: rotate(-15deg); 
 }
 
-.Patafix-pp {
+.avatarPatafix {
     transform: rotate(5deg); 
 }
 
-.about-content {
+.aboutContent {
     margin: 0;
     width: 884px;
     align-items: center;
@@ -364,13 +364,13 @@ h2 {
     line-height: normal;
 }
 
-.about-title {
+.aboutTitle {
     position: absolute;
     margin: 0 0 45em 65em;
     transform: rotate(30deg); 
 }
 
-.special-title {
+.aboutTitle > h2 {
     color: #FC7C33;
     text-align: center;
     font-family: var(--font-sedgwick);
@@ -388,7 +388,7 @@ h2 {
     margin: 2em 0 10em 0;
 }
 
-.social-button {
+.socialButton {
     width: 50px;
     height: 50px;
     margin: 0 40px 0 40px;
@@ -402,22 +402,22 @@ h2 {
     justify-content: center;
 }
 
-.social-button:hover {
+.socialButton:hover {
     transform: scale(1.05);
     transition: transform .1s ease-in-out;
 }
 
-.social-button > img {
+.socialButton > img {
     width: 30px;
     height: 30px;
 }
 
-.social-discord {
+.socialDiscord {
     background: #5865F2;
     border: 0.5px solid #5865F2;
 }
 
-.social-mail {
+.socialMail {
     background: #FC7C33;
     border: 0.5px solid #FC7C33;
 }

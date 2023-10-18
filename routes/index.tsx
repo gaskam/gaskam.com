@@ -8,14 +8,13 @@ export default function Home() {
         <>
             <Header />
             <div className="home">
-                <div class="logo-acceuil">
+                <div class="homeLogo">
                     <img
                         src="/images/gaskam-logo-min.png"
-                        alt="the background of the gaskam logo"
+                        alt="The Gaskam logo: a tagged background with the text 'Gaskam' in the middle"
                     />
-                    {/* <span>Gaskam</span> */}
                 </div>
-                <div className="citations">
+                <div className="quote">
                     <span className="content">
                         “Le débogage est deux fois plus difficile que la
                         programmation. Si vous écrivez le code aussi
@@ -29,7 +28,7 @@ export default function Home() {
                         <div className="downArrowHoverEffect">
                             <img
                                 src="/images/downArrow.svg"
-                                alt="the background of the gaskam logo"
+                                alt="It's an arrow pointing down"
                             />
                         </div>
                     </a>
@@ -40,9 +39,9 @@ export default function Home() {
                 <div className="anchor" id="pataland"></div>
                 <img
                     src="/images/pataland-hight.jpg"
-                    alt="the PataLand presentation poster"
+                    alt="The PataLand section: a background composed of a BeamNG.drive screenshot which is a car in a showroom"
                 />
-                <div class="over-image">
+                <div class="overImage">
                     <h2>PataLand</h2>
                     <p>
                         Rejoignez-nous sur notre serveur BeamMP! De nombreux
@@ -50,25 +49,25 @@ export default function Home() {
                         nouveaux mode de jeu exclusifs...
                     </p>
                     <a href="https://pataland.gaskam.com">
-                        <Button class="play-pataland" id="play-pataland">
+                        <Button class="playPataland" id="play-pataland">
                             <h3>Jouer !</h3>
                         </Button>
                     </a>
                 </div>
             </div>
-            <div className="projects-title" id="projects">
+            <div className="projectsTitle" id="projects">
                 <h2>Nos Projets</h2>
             </div>
             <div className="cardContainer">
                 <Card
-                    className="big-card"
+                    className="bigCard"
                     title="Gaskam.com"
                     hoverFactor={0.5}
                     content="Ce magnifique site est probablement la démo la plus efficace pour vous montrer nos tallents de développeur front-end. Nous avons fait “gaskam.com” grâce à Fresh de Deno, pour la meilleure expérience utilisateur !"
                 >
                     <img
                         src="/images/cloud.svg"
-                        alt="the background of the gaskam logo"
+                        alt="An illustration of a cloud in the bottom right corner of the card"
                     />
                     <Button href="https://patreon.com/gaskam">
                         <p>J'adore !</p>
@@ -78,7 +77,7 @@ export default function Home() {
                     <div className="toRight">
                         <Card
                             title="DevTimer"
-                            content="Cette librairie TypeScript est d’une simpilcité... Vous allez adorer !"
+                            content="Cette librairie TypeScript est d’une simplicité... Vous allez adorer !"
                             linkHref="/hello.txt"
                             linkText="Tester une démo"
                         >
@@ -101,33 +100,33 @@ export default function Home() {
                         </Card>
                         <Card
                             className="specialCard"
-                            content="C'est pour bientôt! En attendant, venez sur le
+                            content="C'est pour bientôt ! En attendant, venez sur le
                                 Discord !"
                         >
-                            <div className="decoration topleft"></div>
+                            <div className="decoration topLeft"></div>
                             <Button href="http://discord.gaskam.com">
                                 <p>Y aller !</p>
                             </Button>
-                            <div className="decoration bottomright"></div>
+                            <div className="decoration bottomRight"></div>
                         </Card>
                     </div>
                 </div>
             </div>
             <div className="aboutAnchor" id="about"></div>
-            <div class="about-section">
-                <div class="github-avatars">
+            <div class="aboutSection">
+                <div class="githubAvatars">
                     <img
-                        class="BotMaker-pp"
+                        class="avatarBotMaker"
                         src="https://avatars.githubusercontent.com/u/72702161?v=4"
-                        alt="the BotMaker's avatar"
+                        alt="The BotMaker's avatar on GitHub used as a profile picture to represent him"
                     />
                     <img
-                        class="Patafix-pp"
+                        class="avatarPatafix"
                         src="https://avatars.githubusercontent.com/u/87929402?v=4"
-                        alt="the Patafix's avatar"
+                        alt="The Patafix's avatar on GitHub used as a profile picture to represent him"
                     />
                 </div>
-                <div class="about-content">
+                <div class="aboutContent">
                     <p>
                         Nous nous présentons, BotMaker et Patafix, deux jeunes
                         développeurs français, encore étudiants, avec de grandes
@@ -148,29 +147,41 @@ export default function Home() {
                         l’aide des informations ci-dessous.
                     </p>
                 </div>
-                <div class="about-title">
-                    <h2 class="special-title">About</h2>
+                <div class="aboutTitle">
+                    <h2>About</h2>
                 </div>
             </div>
             <div className="social">
                 <a href="https://github.com/gaskam-com/">
-                    <div className="social-button social-github">
-                        <img src="/images/github.svg" alt="GitHub Button" />
+                    <div className="socialButton socialGithub">
+                        <img
+                            src="/images/github.svg"
+                            alt="It's the Github logo used as button"
+                        />
                     </div>
                 </a>
                 <a href="http://discord.gaskam.com">
-                    <div className="social-button social-discord">
-                        <img src="/images/discord.svg" alt="Discord Button" />
+                    <div className="socialButton socialDiscord">
+                        <img
+                            src="/images/discord.svg"
+                            alt="It's the Discord logo used as button"
+                        />
                     </div>
                 </a>
                 <a href="mailto:contact@gaskam.com">
-                    <div className="social-button social-mail">
-                        <img src="/images/email.svg" alt="Mail Button" />
+                    <div className="socialButton socialMail">
+                        <img
+                            src="/images/email.svg"
+                            alt="It's mail image used as button"
+                        />
                     </div>
                 </a>
                 <a href="https://youtube.com/@gaskam/">
-                    <div className="social-button social-youtube">
-                        <img src="/images/youtube.svg" alt="YouTube Button" />
+                    <div className="socialButton socialYoutube">
+                        <img
+                            src="/images/youtube.svg"
+                            alt="It's the YouTube logo used as button"
+                        />
                     </div>
                 </a>
             </div>
