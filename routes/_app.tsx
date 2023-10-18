@@ -33,6 +33,7 @@ return (
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaskam - Official Website</title>
     <link rel="stylesheet" href="/css/styles.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R7JX9DLRYZ"></script>
     <script src="/js/tracker.js"></script>
 </head>
 
