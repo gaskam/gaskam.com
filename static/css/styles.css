@@ -33,7 +33,7 @@ a {
 h2 {
     margin: 0;
     padding: 0;
-    font-size: 1.667vw;
+    font-size: 1.8em;
     font-weight: 400;
     font-family: var(--font-code);
 }
@@ -169,7 +169,7 @@ h2 {
     max-width: 30.156vw;
     min-width: 466px;
     text-align: justify;
-    font-size: 1.25vw;
+    font-size: 1.25em;
 }
 
 .playPataland {
@@ -180,7 +180,7 @@ h2 {
     margin: 0;
     padding: 0;   
     font-family: var(--font-code);
-    font-size: 1.25rem;
+    font-size: 1.25em;
     font-style: normal;
     font-weight: 400;
     line-height: normal; 
@@ -221,7 +221,7 @@ h2 {
 }
 
 .card.bigCard .content {
-    font-size: 24px;
+    font-size: 1.5em;
     line-height: 1.4em;
 }
 
