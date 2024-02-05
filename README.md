@@ -1,16 +1,18 @@
-# Fresh project
+Install dependencies using Bun:
 
-Your new Fresh project is ready to go. You can follow the Fresh "Getting
-Started" guide here: https://fresh.deno.dev/docs/getting-started
-
-### Usage
-
-Make sure to install Deno: https://deno.land/manual/getting_started/installation
-
-Then start the project:
-
-```
-deno task start
+```bash
+bun install
 ```
 
-This will watch the project directory and restart as necessary.
+Start the development server:
+
+```bash
+bun run dev
+```
+Open your browser and visit http://localhost:5173.
+
+To build the project for production:
+
+```bash
+bun run build
+```
