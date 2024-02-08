@@ -32,7 +32,6 @@ All the project is in 3D and we navigate between views.
     - [ ] `jobs` - job opportunities (jobs.gaskam.com)
     - [ ] `dev` - developers area (dev.gaskam.com)
     - [ ] `lang` - change language (en, fr, es, it, de, pt, ru, zh, ja, ko)
-        - [ ] `--all` - list all available languages
         - [ ] `--default` - set the default language
         - [ ] `--en` - set the language to English
         - [ ] `--fr` - set the language to French
@@ -45,7 +44,6 @@ All the project is in 3D and we navigate between views.
         - [ ] `--ja` - set the language to Japanese
         - [ ] `--ko` - set the language to Korean
     - [ ] `theme` - change theme (light, dark)
-        - [ ] `--all` - list all available themes
         - [ ] `--default` - set the default theme
         - [ ] `--light` - set the theme to light
         - [ ] `--dark` - set the theme to dark
