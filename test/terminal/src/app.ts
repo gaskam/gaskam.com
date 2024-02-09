@@ -6,10 +6,11 @@ document.addEventListener("keydown", function (event) {
     const terminalElement = document.getElementById("terminal");
     if (inputElement) {
         switch (event.key) {
-            case "Backspace":
+            case "Backspace": {
                 inputElement.innerText = inputElement.innerText.slice(0, -1);
                 break;
-            case "Enter":
+            }
+            case "Enter": {
                 if (
                     inputElement.innerText.includes("<") ||
                     inputElement.innerText.includes(">")
@@ -29,7 +30,20 @@ document.addEventListener("keydown", function (event) {
                     terminalElement.innerHTML += `<br>gaskam.com $\u00A0${inputElement.innerText}`;
                 }
 
-                switch (inputElement.innerText) {
+                const inputWords = inputElement.innerText.split("\u00A0");
+                const firstWord = inputWords[0];
+                let secondWord = "";
+
+                if (inputWords.length > 1 && inputWords[1].startsWith("--")) {
+                    secondWord = inputWords[1].substring(2);
+                } else if (inputWords.length > 1) {
+                    if (terminalElement) {
+                        terminalElement.innerHTML += "<br>&nbsp;&nbsp;It's not a valid argument: don't forget to add -- before the argument!";
+                    }
+                    secondWord = "";
+                }
+
+                switch (firstWord) {
                     case "help":
                         if (terminalElement) {
                             terminalElement.innerHTML += command.help;
@@ -51,64 +65,81 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "projects":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projects;
+                        switch (secondWord) {
+                            case "typescript":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsTypescript;
+                                }
+                                break;
+                            case "javascript":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsJavascript;
+                                }
+                                break;
+                            case "bun":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsBun;
+                                }
+                                break;
+                            case "lua":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsLua;
+                                }
+                                break;
+                            case "python":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsPython;
+                                }
+                                break;
+                            case "cpp":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projectsCpp;
+                                }
+                                break;
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.projects;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
-                        break;
-                    case "projects --typescript":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsTypescript;
-                        }
-                        break;
-                    case "projects --javascript":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsJavascript;
-                        }
-                        break;
-                    case "projects --bun":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsBun;
-                        }
-                        break;
-                    case "projects --lua":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsLua;
-                        }
-                        break;
-                    case "projects --python":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsPython;
-                        }
-                        break;
-                    case "projects --cpp":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.projectsCpp;
-                        }
-                        break;
-                    
+                        break;                    
                     case "support":
                         if (terminalElement) {
                             terminalElement.innerHTML += command.support;
                         }
                         break;
                     case "github":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.github;
-                        }
-                        break;
-                    case "github --gaskam":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.githubGaskam;
-                        }
-                        break;
-                    case "github --patafix":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.githubPatafix;
-                        }
-                        break;
-                    case "github --botmaker":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.githubBotmaker;
+                        switch (secondWord) {
+                            case "gaskam":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.githubGaskam;
+                                }
+                                break;
+                            case "patafix":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.githubPatafix;
+                                }
+                                break;
+                            case "botmaker":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.githubBotmaker;
+                                }
+                                break;
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.github;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "discord":
@@ -132,83 +163,101 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "lang":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.lang;
-                        }
-                        break;
-                    case "lang --default":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langDefault;
-                        }
-                        break;
-                    case "lang --en":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langEn;
-                        }
-                        break;
-                    case "lang --fr":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langFr;
-                        }
-                        break;
-                    case "lang --es":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langEs;
-                        }
-                        break;
-                    case "lang --it":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langIt;
-                        }
-                        break;
-                    case "lang --de":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langDe;
-                        }
-                        break;
-                    case "lang --pt":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langPt;
-                        }
-                        break;
-                    case "lang --ru":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langRu;
-                        }
-                        break;
-                    case "lang --zh":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langZh;
-                        }
-                        break;
-                    case "lang --ja":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langJa;
-                        }
-                        break;
-                    case "lang --ko":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.langKo;
+                        switch (secondWord) {
+                            case "default":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langDefault;
+                                }
+                                break;
+                            case "en":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langEn;
+                                }
+                                break;
+                            case "fr":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langFr;
+                                }
+                                break;
+                            case "es":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langEs;
+                                }
+                                break;
+                            case "it":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langIt;
+                                }
+                                break;
+                            case "de":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langDe;
+                                }
+                                break;
+                            case "pt":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langPt;
+                                }
+                                break;
+                            case "ru":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langRu;
+                                }
+                                break;
+                            case "zh":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langZh;
+                                }
+                                break;
+                            case "ja":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langJa;
+                                }
+                                break;
+                            case "ko":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.langKo;
+                                }
+                                break;
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.lang;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "theme":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.theme;
-                        }
-                        break;
-                    case "theme --default":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.themeDefault;
-                        }
-                        break;
-                    case "theme --light":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.themeLight;
-                        }
-                        break;
-                    case "theme --dark":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.themeDark;
+                        switch (secondWord) {
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.theme;
+                                }
+                                break;
+                            case "--default":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.themeDefault;
+                                }
+                                break;
+                            case "--light":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.themeLight;
+                                }
+                                break;
+                            case "--dark":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.themeDark;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "reload":
@@ -232,23 +281,41 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "privacy":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.privacy;
-                        }
-                        break;
-                    case "privacy --pdf":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.privacyPdf;
+                        switch (secondWord) {
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.privacy;
+                                }
+                                break;
+                            case "--pdf":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.privacyPdf;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "terms":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.terms;
-                        }
-                        break;
-                    case "terms --pdf":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.termsPdf;
+                        switch (secondWord) {
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.terms;
+                                }
+                                break;
+                            case "--pdf":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.termsPdf;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "credits":
@@ -282,83 +349,101 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "login":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.login;
-                        }
-                        break;
-                    case "login --github":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginGithub;
-                        }
-                        break;
-                    case "login --discord":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginDiscord;
-                        }
-                        break;
-                    case "login --google":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginGoogle;
-                        }
-                        break;
-                    case "login --twitter":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginTwitter;
-                        }
-                        break;
-                    case "login --microsoft":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginMicrosoft;
-                        }
-                        break;
-                    case "login --apple":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginApple;
-                        }
-                        break;
-                    case "login --email":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.loginEmail;
+                        switch (secondWord) {
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.login;
+                                }
+                                break;
+                            case "--github":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginGithub;
+                                }
+                                break;
+                            case "--discord":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginDiscord;
+                                }
+                                break;
+                            case "--google":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginGoogle;
+                                }
+                                break;
+                            case "--twitter":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginTwitter;
+                                }
+                                break;
+                            case "--microsoft":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginMicrosoft;
+                                }
+                                break;
+                            case "--apple":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginApple;
+                                }
+                                break;
+                            case "--email":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.loginEmail;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "register":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.register;
-                        }
-                        break;
-                    case "register --github":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerGithub;
-                        }
-                        break;
-                    case "register --discord":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerDiscord;
-                        }
-                        break;
-                    case "register --google":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerGoogle;
-                        }
-                        break;
-                    case "register --twitter":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerTwitter;
-                        }
-                        break;
-                    case "register --microsoft":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerMicrosoft;
-                        }
-                        break;
-                    case "register --apple":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerApple;
-                        }
-                        break;
-                    case "register --email":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.registerEmail;
+                        switch (secondWord) {
+                            case "":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.register;
+                                }
+                                break;
+                            case "--github":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerGithub;
+                                }
+                                break;
+                            case "--discord":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerDiscord;
+                                }
+                                break;
+                            case "--google":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerGoogle;
+                                }
+                                break;
+                            case "--twitter":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerTwitter;
+                                }
+                                break;
+                            case "--microsoft":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerMicrosoft;
+                                }
+                                break;
+                            case "--apple":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerApple;
+                                }
+                                break;
+                            case "--email":
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.registerEmail;
+                                }
+                                break;
+                            default:
+                                if (terminalElement) {
+                                    terminalElement.innerHTML += command.defaultError;
+                                }
+                                break;
                         }
                         break;
                     case "profile":
@@ -382,15 +467,19 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     default:
+                        if (terminalElement) {
+                            terminalElement.innerHTML += command.defaultError;
+                        }
                         break;
                 }
 
                 inputElement.innerText = "";
                 break;
+            }
             case " ":
                 inputElement.innerText += "\u00A0";
                 break;
-            case /^[a-zA-Z0-9\-]$/.test(event.key) && event.key:
+            case /^[a-zA-Z0-9\-\,]$/.test(event.key) && event.key:
                 inputElement.innerText += event.key;
                 break;
             default:
