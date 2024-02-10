@@ -1,9 +1,10 @@
 import * as command from "./commands.ts";
 
-let timeout = -1;
+let timeout: -1;
 document.addEventListener("keydown", function (event) {
     const inputElement = document.getElementById("input");
     const terminalElement = document.getElementById("terminal");
+    const cursorElement = document.getElementById("cursor");
     if (inputElement) {
         switch (event.key) {
             case "Backspace": {
@@ -18,7 +19,10 @@ document.addEventListener("keydown", function (event) {
                     return;
                 }
 
-                if (inputElement.innerText === "clear") {
+                if (
+                    inputElement.innerText === "clear" ||
+                    inputElement.innerText === "cls"
+                ) {
                     if (terminalElement) {
                         terminalElement.innerHTML = command.defaultMessage;
                     }
@@ -27,7 +31,7 @@ document.addEventListener("keydown", function (event) {
                 }
 
                 if (terminalElement) {
-                    terminalElement.innerHTML += `<br>gaskam.com $\u00A0${inputElement.innerText}`;
+                    terminalElement.innerHTML += `<br><br><span class="session">gaskam.com $&nbsp;</span>${inputElement.innerText}`;
                 }
 
                 const inputWords = inputElement.innerText.split("\u00A0");
@@ -38,195 +42,135 @@ document.addEventListener("keydown", function (event) {
                     secondWord = inputWords[1].substring(2);
                 } else if (inputWords.length > 1) {
                     if (terminalElement) {
-                        terminalElement.innerHTML += "<br>&nbsp;&nbsp;It's not a valid argument: don't forget to add -- before the argument!";
+                        terminalElement.innerHTML +=
+                            "<br>&nbsp;&nbsp;It's not a valid argument: don't forget to add -- before the argument!";
                     }
                     secondWord = "";
                 }
 
                 switch (firstWord) {
                     case "help":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.help;
-                        }
+                        command.help(terminalElement);
                         break;
                     case "ls":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.ls;
-                        }
+                        command.ls(terminalElement);
                         break;
                     case "tree":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.tree;
-                        }
+                        command.tree(terminalElement);
                         break;
                     case "about":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.about;
-                        }
+                        command.about(terminalElement);
                         break;
                     case "projects":
                         switch (secondWord) {
                             case "typescript":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsTypescript;
-                                }
+                                command.projectsTypescript(terminalElement);
                                 break;
                             case "javascript":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsJavascript;
-                                }
+                                command.projectsJavascript(terminalElement);
                                 break;
                             case "bun":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsBun;
-                                }
+                                command.projectsBun(terminalElement);
                                 break;
                             case "lua":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsLua;
-                                }
+                                command.projectsLua(terminalElement);
                                 break;
                             case "python":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsPython;
-                                }
+                                command.projectsPython(terminalElement);
                                 break;
                             case "cpp":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projectsCpp;
-                                }
+                                command.projectsCpp(terminalElement);
                                 break;
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.projects;
-                                }
+                                command.projects(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
-                        break;                    
+                        break;
                     case "support":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.support;
-                        }
+                        command.support(terminalElement);
                         break;
                     case "github":
                         switch (secondWord) {
                             case "gaskam":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.githubGaskam;
-                                }
+                                command.githubGaskam(terminalElement);
                                 break;
                             case "patafix":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.githubPatafix;
-                                }
+                                command.githubPatafix(terminalElement);
                                 break;
                             case "botmaker":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.githubBotmaker;
-                                }
+                                command.githubBotmaker(terminalElement);
                                 break;
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.github;
-                                }
+                                command.github(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
                         break;
                     case "discord":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.discord;
-                        }
+                        command.discord(terminalElement);
                         break;
                     case "youtube":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.youtube;
-                        }
+                        command.youtube(terminalElement);
                         break;
                     case "jobs":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.jobs;
-                        }
+                        command.jobs(terminalElement);
                         break;
                     case "dev":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.dev;
-                        }
+                        command.dev(terminalElement);
                         break;
                     case "lang":
                         switch (secondWord) {
                             case "default":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langDefault;
-                                }
+                                command.langDefault(terminalElement);
                                 break;
                             case "en":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langEn;
-                                }
+                                command.langEn(terminalElement);
                                 break;
                             case "fr":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langFr;
-                                }
+                                command.langFr(terminalElement);
                                 break;
                             case "es":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langEs;
-                                }
+                                command.langEs(terminalElement);
                                 break;
                             case "it":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langIt;
-                                }
+                                command.langIt(terminalElement);
                                 break;
                             case "de":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langDe;
-                                }
+                                command.langDe(terminalElement);
                                 break;
                             case "pt":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langPt;
-                                }
+                                command.langPt(terminalElement);
                                 break;
                             case "ru":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langRu;
-                                }
+                                command.langRu(terminalElement);
                                 break;
                             case "zh":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langZh;
-                                }
+                                command.langZh(terminalElement);
                                 break;
                             case "ja":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langJa;
-                                }
+                                command.langJa(terminalElement);
                                 break;
                             case "ko":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.langKo;
-                                }
+                                command.langKo(terminalElement);
                                 break;
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.lang;
-                                }
+                                command.lang(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
@@ -234,67 +178,49 @@ document.addEventListener("keydown", function (event) {
                     case "theme":
                         switch (secondWord) {
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.theme;
-                                }
+                                command.theme(terminalElement);
                                 break;
                             case "--default":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.themeDefault;
-                                }
+                                command.themeDefault(terminalElement);
                                 break;
                             case "--light":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.themeLight;
-                                }
+                                command.themeLight(terminalElement);
                                 break;
                             case "--dark":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.themeDark;
-                                }
+                                command.themeDark(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
                         break;
                     case "reload":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.reload;
-                        }
+                        command.reload(terminalElement);
                         break;
                     case "events":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.events;
-                        }
+                        command.events(terminalElement);
                         break;
                     case "community":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.community;
-                        }
+                        command.community(terminalElement);
                         break;
                     case "contact":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.contact;
-                        }
+                        command.contact(terminalElement);
                         break;
                     case "privacy":
                         switch (secondWord) {
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.privacy;
-                                }
+                                command.privacy(terminalElement);
                                 break;
                             case "--pdf":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.privacyPdf;
-                                }
+                                command.privacyPdf(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
@@ -302,97 +228,67 @@ document.addEventListener("keydown", function (event) {
                     case "terms":
                         switch (secondWord) {
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.terms;
-                                }
+                                command.terms(terminalElement);
                                 break;
                             case "--pdf":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.termsPdf;
-                                }
+                                command.termsPdf(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
                         break;
                     case "credits":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.credits;
-                        }
+                        command.credits(terminalElement);
                         break;
                     case "news":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.news;
-                        }
+                        command.news(terminalElement);
                         break;
                     case "faq":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.faq;
-                        }
+                        command.faq(terminalElement);
                         break;
                     case "ask":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.ask;
-                        }
+                        command.ask(terminalElement);
                         break;
                     case "newsletter":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.newsletter;
-                        }
+                        command.newsletter(terminalElement);
                         break;
                     case "feedback":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.feedback;
-                        }
+                        command.feedback(terminalElement);
                         break;
                     case "login":
                         switch (secondWord) {
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.login;
-                                }
+                                command.login(terminalElement);
                                 break;
                             case "--github":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginGithub;
-                                }
+                                command.loginGithub(terminalElement);
                                 break;
                             case "--discord":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginDiscord;
-                                }
+                                command.loginDiscord(terminalElement);
                                 break;
                             case "--google":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginGoogle;
-                                }
+                                command.loginGoogle(terminalElement);
                                 break;
                             case "--twitter":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginTwitter;
-                                }
+                                command.loginTwitter(terminalElement);
                                 break;
                             case "--microsoft":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginMicrosoft;
-                                }
+                                command.loginMicrosoft(terminalElement);
                                 break;
                             case "--apple":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginApple;
-                                }
+                                command.loginApple(terminalElement);
                                 break;
                             case "--email":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.loginEmail;
-                                }
+                                command.loginEmail(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
@@ -400,71 +296,48 @@ document.addEventListener("keydown", function (event) {
                     case "register":
                         switch (secondWord) {
                             case "":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.register;
-                                }
+                                command.register(terminalElement);
                                 break;
                             case "--github":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerGithub;
-                                }
+                                command.registerGithub(terminalElement);
                                 break;
                             case "--discord":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerDiscord;
-                                }
+                                command.registerDiscord(terminalElement);
                                 break;
                             case "--google":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerGoogle;
-                                }
+                                command.registerGoogle(terminalElement);
                                 break;
                             case "--twitter":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerTwitter;
-                                }
+                                command.registerTwitter(terminalElement);
                                 break;
                             case "--microsoft":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerMicrosoft;
-                                }
+                                command.registerMicrosoft(terminalElement);
                                 break;
                             case "--apple":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerApple;
-                                }
+                                command.registerApple(terminalElement);
                                 break;
                             case "--email":
-                                if (terminalElement) {
-                                    terminalElement.innerHTML += command.registerEmail;
-                                }
+                                command.registerEmail(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
-                                    terminalElement.innerHTML += command.defaultError;
+                                    terminalElement.innerHTML +=
+                                        command.defaultError;
                                 }
                                 break;
                         }
                         break;
                     case "profile":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.profile;
-                        }
+                        command.profile(terminalElement);
                         break;
                     case "settings":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.settings;
-                        }
+                        command.settings(terminalElement);
                         break;
                     case "logout":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.logout;
-                        }
+                        command.logout(terminalElement);
                         break;
                     case "search":
-                        if (terminalElement) {
-                            terminalElement.innerHTML += command.search;
-                        }
+                        command.search(terminalElement);
                         break;
                     default:
                         if (terminalElement) {
@@ -486,11 +359,14 @@ document.addEventListener("keydown", function (event) {
                 return;
         }
 
-        const cursorElement = document.getElementById("cursor");
+        if (cursorElement) {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+
         cursorElement?.classList.add("write");
 
         clearTimeout(timeout);
-        timeout = setTimeout(() => {
+        timeout = setTimeout(() => { // I don't know why but it's working - an error probably because of Bun
             cursorElement?.classList.remove("write");
         }, 1000);
     }

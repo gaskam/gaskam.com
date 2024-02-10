@@ -1,466 +1,676 @@
-export const defaultMessage =
-    "-----------------------------<br>WELOME TO GASKAM.COM TERMINAL<br>-----------------------------<br>&nbsp;";
+export const defaultMessage = "<span class='title'>WELOME TO GASKAM.COM TERMINAL</span>";
 export const defaultError =
-    "<br>&nbsp;&nbsp;Command not found, type 'help' to see all commands";
+    "<br><br>Command not found, type 'help' to see all commands";
 
 // Help
-export const help = `
+export function help(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
+        <br>
+    <br>Here is a list of available commands:
     <br>
-    <br>&nbsp;&nbsp;Here is a list of available commands:
-    <br>
-    <br>&nbsp;&nbsp;help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list all commands except easteregg
-    <br>&nbsp;&nbsp;ls&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- definded later
-    <br>&nbsp;&nbsp;tree&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list of all files of the project (like GitHub)
-    <br>&nbsp;&nbsp;about&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Shows some very very useful informations (the boring ones) about us
-    <br>&nbsp;&nbsp;projects&nbsp;&nbsp;&nbsp;- a presentation of all projects   
-    <br>&nbsp;&nbsp;support&nbsp;&nbsp;&nbsp;&nbsp;- support us with a donation
-    <br>&nbsp;&nbsp;github&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- link to the GitHub page
-    <br>&nbsp;&nbsp;discord&nbsp;&nbsp;&nbsp;&nbsp;- link to the Discord server
-    <br>&nbsp;&nbsp;youtube&nbsp;&nbsp;&nbsp;&nbsp;- link to the YouTube channel 
-    <br>&nbsp;&nbsp;jobs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- job opportunities (jobs.gaskam.com)
-    <br>&nbsp;&nbsp;dev&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- developers area (dev.gaskam.com)
-    <br>&nbsp;&nbsp;lang&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- change language (en, fr, es, it, de, pt, ru, zh, ja, ko)
-    <br>&nbsp;&nbsp;theme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- change theme (light, dark)
-    <br>&nbsp;&nbsp;reload&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- reload the page
-    <br>&nbsp;&nbsp;events&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list of all events
-    <br>&nbsp;&nbsp;community&nbsp;&nbsp;- list of all community projects which use our tools
-    <br>&nbsp;&nbsp;clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- clear the terminal
-    <br>&nbsp;&nbsp;contact&nbsp;&nbsp;&nbsp;&nbsp;- contact us
-    <br>&nbsp;&nbsp;privacy&nbsp;&nbsp;&nbsp;&nbsp;- privacy policy
-    <br>&nbsp;&nbsp;terms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- terms of service
-    <br>&nbsp;&nbsp;credits&nbsp;&nbsp;&nbsp;&nbsp;- list of all contributors
-    <br>&nbsp;&nbsp;news&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list of all news
-    <br>&nbsp;&nbsp;faq&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- list of all frequently asked questions
-    <br>&nbsp;&nbsp;ask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ask a question
-    <br>&nbsp;&nbsp;newsletter&nbsp;- subscribe to the newsletter
-    <br>&nbsp;&nbsp;feedback&nbsp;&nbsp;&nbsp;- send us a feedback
-    <br>&nbsp;&nbsp;login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - login to the website
-    <br>&nbsp;&nbsp;register&nbsp;&nbsp;&nbsp;- register to the website
-    <br>&nbsp;&nbsp;profile&nbsp;&nbsp;&nbsp;&nbsp;- your profile
-    <br>&nbsp;&nbsp;settings&nbsp;&nbsp;&nbsp;- your settings
-    <br>&nbsp;&nbsp;logout&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- logout from the website
-    <br>&nbsp;&nbsp;search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- search for something
-    <br>&nbsp;
-`;
+    <br>help- list all commands except easteregg
+    <br>ls- definded later
+    <br>tree- list of all files of the project (like GitHub)
+    <br>about- Shows some very very useful informations (the boring ones) about us
+    <br>projects- a presentation of all projects   
+    <br>support- support us with a donation
+    <br>github- link to the GitHub page
+    <br>discord- link to the Discord server
+    <br>youtube- link to the YouTube channel 
+    <br>jobs- job opportunities (jobs.gaskam.com)
+    <br>dev- developers area (dev.gaskam.com)
+    <br>lang- change language (en, fr, es, it, de, pt, ru, zh, ja, ko)
+    <br>theme- change theme (light, dark)
+    <br>reload- reload the page
+    <br>events- list of all events
+    <br>community- list of all community projects which use our tools
+    <br>clear- clear the terminal
+    <br>contact- contact us
+    <br>privacy- privacy policy
+    <br>terms- terms of service
+    <br>credits- list of all contributors
+    <br>news- list of all news
+    <br>faq- list of all frequently asked questions
+    <br>ask- ask a question
+    <br>newsletter- subscribe to the newsletter
+    <br>feedback- send us a feedback
+    <br>login - login to the website
+    <br>register- register to the website
+    <br>profile- your profile
+    <br>settings- your settings
+    <br>logout- logout from the website
+    <br>search- search for something
+        `;
+    }
+}
 
 // Ls
-export const ls = `
+export function ls(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Tree
-export const tree = `
+export function tree(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // About
-export const about = `
+export function about(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Projects
-export const projects = `
+export function projects(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;&nbsp;&nbsp;You can sort by language with --typescript, --javascript, --bun, --lua, --python, --cpp
-    <br>&nbsp;
-`;
-export const projectsTypescript = `
+    <br>Comming soon!
+    <br>You can sort by language with --typescript, --javascript, --bun, --lua, --python, --cpp
+    `;
+    }
+}
+export function projectsTypescript(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const projectsJavascript = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function projectsJavascript(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const projectsBun = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function projectsBun(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const projectsLua = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function projectsLua(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const projectsPython = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function projectsPython(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const projectsCpp = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function projectsCpp(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Support
-export const support = `
+export function support(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // GitHub
-export const github = `
+export function github(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;&nbsp;&nbsp;You can sort by profile with --gaskam, --botmaker, --patafix
-    <br>&nbsp;
-`;
-export const githubGaskam = `
+    <br>Comming soon!
+    <br>You can sort by profile with --gaskam, --botmaker, --patafix
+    `;
+    }
+}
+export function githubGaskam(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const githubBotmaker = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function githubBotmaker(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const githubPatafix = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function githubPatafix(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Discord
-export const discord = `
+export function discord(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Youtube
-export const youtube = `
+export function youtube(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Jobs
-export const jobs = `
+export function jobs(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Dev
-export const dev = `
+export function dev(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Lang
-export const lang = `
+export function lang(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Change the language of the terminal
-    <br>&nbsp;&nbsp;lang --default - set the language with your system language
-    <br>&nbsp;&nbsp;lang --en - set the language to english
-    <br>&nbsp;&nbsp;lang --fr - set the language to french
-    <br>&nbsp;&nbsp;lang --es - set the language to spanish
-    <br>&nbsp;&nbsp;lang --de - set the language to german
-    <br>&nbsp;&nbsp;lang --it - set the language to italian
-    <br>&nbsp;&nbsp;lang --ru - set the language to russian
-    <br>&nbsp;&nbsp;lang --pt - set the language to portuguese
-    <br>&nbsp;&nbsp;lang --ja - set the language to japanese
-    <br>&nbsp;&nbsp;lang --zh - set the language to chinese
-    <br>&nbsp;&nbsp;lang --ko - set the language to korean
-    <br>&nbsp;
-`;
-export const langDefault = `
+    <br>Change the language of the terminal
+    <br>lang --default - set the language with your system language
+    <br>lang --en - set the language to english
+    <br>lang --fr - set the language to french
+    <br>lang --es - set the language to spanish
+    <br>lang --de - set the language to german
+    <br>lang --it - set the language to italian
+    <br>lang --ru - set the language to russian
+    <br>lang --pt - set the language to portuguese
+    <br>lang --ja - set the language to japanese
+    <br>lang --zh - set the language to chinese
+    <br>lang --ko - set the language to korean
+    `;
+    }
+}
+export function langDefault(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langEn = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langEn(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langFr = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langFr(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langEs = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langEs(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langDe = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langDe(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langIt = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langIt(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langRu = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langRu(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langPt = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langPt(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langJa = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langJa(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langZh = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langZh(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const langKo = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function langKo(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Theme
-export const theme = `
+export function theme(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Change the theme of the terminal
-    <br>&nbsp;&nbsp;theme --default - set the theme with your system preference
-    <br>&nbsp;&nbsp;theme --light - set the theme to light
-    <br>&nbsp;&nbsp;theme --dark - set the theme to dark
-    <br>&nbsp;
-`;
-export const themeDefault = `
+    <br>Change the theme of the terminal
+    <br>theme --default - set the theme with your system preference
+    <br>theme --light - set the theme to light
+    <br>theme --dark - set the theme to dark
+    `;
+    }
+}
+export function themeDefault(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const themeLight = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function themeLight(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const themeDark = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function themeDark(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Reload
-export const reload = `
+export function reload(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Events
-export const events = `
+export function events(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Community
-export const community = `
+export function community(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Contact
-export const contact = `
+export function contact(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Privacy
-export const privacy = `
+export function privacy(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const privacyPdf = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function privacyPdf(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Terms
-export const terms = `
+export function terms(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const termsPdf = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function termsPdf(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Credits
-export const credits = `
+export function credits(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // News
-export const news = `
+export function news(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // FAQ
-export const faq = `
+export function faq(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Ask
-export const ask = `
+export function ask(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Newsletter
-export const newsletter = `
+export function newsletter(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Feedback
-export const feedback = `
+export function feedback(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Login
-export const login = `
+export function login(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginGithub = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginGithub(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginGoogle = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginGoogle(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginDiscord = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginDiscord(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginTwitter = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginTwitter(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginApple = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginApple(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginMicrosoft = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginMicrosoft(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const loginEmail = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function loginEmail(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Register
-export const register = `
+export function register(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerGithub = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerGithub(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerGoogle = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerGoogle(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
+    <br>Comming soon!
     
     <br>
-`;
-export const registerDiscord = `
+    `;
+    }
+}
+export function registerDiscord(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerTwitter = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerTwitter(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerApple = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerApple(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerMicrosoft = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerMicrosoft(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
-export const registerEmail = `
+    <br>Comming soon!
+    `;
+    }
+}
+export function registerEmail(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Logout
-export const logout = `
+export function logout(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Profile
-export const profile = `
+export function profile(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Settings
-export const settings = `
+export function settings(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
 
 // Search
-export const search = `
+export function search(terminalElement: HTMLElement | null) {
+    if (terminalElement) {
+        terminalElement.innerHTML += `
     <br>
-    <br>&nbsp;&nbsp;Comming soon!
-    <br>&nbsp;
-`;
+    <br>Comming soon!
+    `;
+    }
+}
