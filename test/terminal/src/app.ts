@@ -1,10 +1,28 @@
 import * as command from "./commands.ts";
 
+// Constants
+const gaskamRepos = "https://api.github.com/orgs/gaskam-com/repos";
+const githubLinkGaskam = "https://github.com/gaskam-com/";
+const githubLinkPatafix = "https://github.com/PatafixPLTX/";
+const githubLinkBotmaker = "https://github.com/Bot-maKeR-0000/";
+const discordLink = "http://discord.gaskam.com";
+const youtubeLink = "http://youtube.gaskam.com";
+
+
+window.onload = () => {
+    const terminalElement = document.getElementById("terminal");
+    const silent = true;
+    command.themeDefault(terminalElement, silent);
+};
+
+// Event Listeners
 let timeout: -1;
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", async function (event) {
     const inputElement = document.getElementById("input");
     const terminalElement = document.getElementById("terminal");
+    const sessionElement = document.getElementById("session");
     const cursorElement = document.getElementById("cursor");
+    const silent = false;
     if (inputElement) {
         switch (event.key) {
             case "Backspace": {
@@ -34,6 +52,13 @@ document.addEventListener("keydown", function (event) {
                     terminalElement.innerHTML += `<br><br><span class="session">gaskam.com $&nbsp;</span>${inputElement.innerText}`;
                 }
 
+                if (inputElement.innerText.startsWith("ask")) {
+                    const stringAfterAsk = inputElement.innerText.substring(4);
+                    command.ask(terminalElement, stringAfterAsk);
+                    inputElement.innerHTML = "";
+                    break;
+                }
+
                 const inputWords = inputElement.innerText.split("\u00A0");
                 const firstWord = inputWords[0];
                 let secondWord = "";
@@ -43,46 +68,68 @@ document.addEventListener("keydown", function (event) {
                 } else if (inputWords.length > 1) {
                     if (terminalElement) {
                         terminalElement.innerHTML +=
-                            "<br>&nbsp;&nbsp;It's not a valid argument: don't forget to add -- before the argument!";
+                            "<br><br>It's not a valid argument: don't forget to add -- before the argument!";
                     }
                     secondWord = "";
                 }
 
+                terminalElement?.classList.add("hidden");
+                sessionElement?.classList.add("hidden");
+                inputElement.classList.add("hidden");
+
                 switch (firstWord) {
                     case "help":
-                        command.help(terminalElement);
+                        await command.help(terminalElement);
                         break;
                     case "ls":
-                        command.ls(terminalElement);
+                        await command.ls(terminalElement);
                         break;
                     case "tree":
-                        command.tree(terminalElement);
+                        await command.tree(terminalElement);
                         break;
                     case "about":
-                        command.about(terminalElement);
+                        await command.about(terminalElement);
                         break;
                     case "projects":
                         switch (secondWord) {
                             case "typescript":
-                                command.projectsTypescript(terminalElement);
+                                await command.projectsTypescript(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "javascript":
-                                command.projectsJavascript(terminalElement);
+                                await command.projectsJavascript(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "bun":
-                                command.projectsBun(terminalElement);
+                                await command.projectsBun(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "lua":
-                                command.projectsLua(terminalElement);
+                                await command.projectsLua(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "python":
-                                command.projectsPython(terminalElement);
+                                await command.projectsPython(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "cpp":
-                                command.projectsCpp(terminalElement);
+                                await command.projectsCpp(
+                                    terminalElement,
+                                    gaskamRepos
+                                );
                                 break;
                             case "":
-                                command.projects(terminalElement);
+                                await command.projects(terminalElement, gaskamRepos);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -93,21 +140,21 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "support":
-                        command.support(terminalElement);
+                        await command.support(terminalElement);
                         break;
                     case "github":
                         switch (secondWord) {
                             case "gaskam":
-                                command.githubGaskam(terminalElement);
+                                await command.githubGaskam(terminalElement, githubLinkGaskam);
                                 break;
                             case "patafix":
-                                command.githubPatafix(terminalElement);
+                                await command.githubPatafix(terminalElement, githubLinkPatafix);
                                 break;
                             case "botmaker":
-                                command.githubBotmaker(terminalElement);
+                                await command.githubBotmaker(terminalElement, githubLinkBotmaker);
                                 break;
                             case "":
-                                command.github(terminalElement);
+                                await command.github(terminalElement, githubLinkGaskam);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -118,54 +165,54 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "discord":
-                        command.discord(terminalElement);
+                        await command.discord(terminalElement, discordLink);
                         break;
                     case "youtube":
-                        command.youtube(terminalElement);
+                        await command.youtube(terminalElement, youtubeLink);
                         break;
                     case "jobs":
-                        command.jobs(terminalElement);
+                        await command.jobs(terminalElement);
                         break;
                     case "dev":
-                        command.dev(terminalElement);
+                        await command.dev(terminalElement);
                         break;
                     case "lang":
                         switch (secondWord) {
                             case "default":
-                                command.langDefault(terminalElement);
+                                await command.langDefault(terminalElement);
                                 break;
                             case "en":
-                                command.langEn(terminalElement);
+                                await command.langEn(terminalElement);
                                 break;
                             case "fr":
-                                command.langFr(terminalElement);
+                                await command.langFr(terminalElement);
                                 break;
                             case "es":
-                                command.langEs(terminalElement);
+                                await command.langEs(terminalElement);
                                 break;
                             case "it":
-                                command.langIt(terminalElement);
+                                await command.langIt(terminalElement);
                                 break;
                             case "de":
-                                command.langDe(terminalElement);
+                                await command.langDe(terminalElement);
                                 break;
                             case "pt":
-                                command.langPt(terminalElement);
+                                await command.langPt(terminalElement);
                                 break;
                             case "ru":
-                                command.langRu(terminalElement);
+                                await command.langRu(terminalElement);
                                 break;
                             case "zh":
-                                command.langZh(terminalElement);
+                                await command.langZh(terminalElement);
                                 break;
                             case "ja":
-                                command.langJa(terminalElement);
+                                await command.langJa(terminalElement);
                                 break;
                             case "ko":
-                                command.langKo(terminalElement);
+                                await command.langKo(terminalElement);
                                 break;
                             case "":
-                                command.lang(terminalElement);
+                                await command.lang(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -178,16 +225,16 @@ document.addEventListener("keydown", function (event) {
                     case "theme":
                         switch (secondWord) {
                             case "":
-                                command.theme(terminalElement);
+                                await command.theme(terminalElement);
                                 break;
-                            case "--default":
-                                command.themeDefault(terminalElement);
+                            case "default":
+                                await command.themeDefault(terminalElement, silent);
                                 break;
-                            case "--light":
-                                command.themeLight(terminalElement);
+                            case "light":
+                                await command.themeLight(terminalElement, silent);
                                 break;
-                            case "--dark":
-                                command.themeDark(terminalElement);
+                            case "dark":
+                                await command.themeDark(terminalElement, silent);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -198,24 +245,24 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "reload":
-                        command.reload(terminalElement);
+                        await command.reload(terminalElement);
                         break;
                     case "events":
-                        command.events(terminalElement);
+                        await command.events(terminalElement);
                         break;
                     case "community":
-                        command.community(terminalElement);
+                        await command.community(terminalElement);
                         break;
                     case "contact":
-                        command.contact(terminalElement);
+                        await command.contact(terminalElement);
                         break;
                     case "privacy":
                         switch (secondWord) {
                             case "":
-                                command.privacy(terminalElement);
+                                await command.privacy(terminalElement);
                                 break;
                             case "--pdf":
-                                command.privacyPdf(terminalElement);
+                                await command.privacyPdf(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -228,10 +275,10 @@ document.addEventListener("keydown", function (event) {
                     case "terms":
                         switch (secondWord) {
                             case "":
-                                command.terms(terminalElement);
+                                await command.terms(terminalElement);
                                 break;
                             case "--pdf":
-                                command.termsPdf(terminalElement);
+                                await command.termsPdf(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -242,48 +289,47 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "credits":
-                        command.credits(terminalElement);
+                        await command.credits(terminalElement);
                         break;
                     case "news":
-                        command.news(terminalElement);
+                        await command.news(terminalElement);
                         break;
                     case "faq":
-                        command.faq(terminalElement);
+                        await command.faq(terminalElement);
                         break;
                     case "ask":
-                        command.ask(terminalElement);
                         break;
                     case "newsletter":
-                        command.newsletter(terminalElement);
+                        await command.newsletter(terminalElement);
                         break;
                     case "feedback":
-                        command.feedback(terminalElement);
+                        await command.feedback(terminalElement);
                         break;
                     case "login":
                         switch (secondWord) {
                             case "":
-                                command.login(terminalElement);
+                                await command.login(terminalElement);
                                 break;
                             case "--github":
-                                command.loginGithub(terminalElement);
+                                await command.loginGithub(terminalElement);
                                 break;
                             case "--discord":
-                                command.loginDiscord(terminalElement);
+                                await command.loginDiscord(terminalElement);
                                 break;
                             case "--google":
-                                command.loginGoogle(terminalElement);
+                                await command.loginGoogle(terminalElement);
                                 break;
                             case "--twitter":
-                                command.loginTwitter(terminalElement);
+                                await command.loginTwitter(terminalElement);
                                 break;
                             case "--microsoft":
-                                command.loginMicrosoft(terminalElement);
+                                await command.loginMicrosoft(terminalElement);
                                 break;
                             case "--apple":
-                                command.loginApple(terminalElement);
+                                await command.loginApple(terminalElement);
                                 break;
                             case "--email":
-                                command.loginEmail(terminalElement);
+                                await command.loginEmail(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -296,28 +342,28 @@ document.addEventListener("keydown", function (event) {
                     case "register":
                         switch (secondWord) {
                             case "":
-                                command.register(terminalElement);
+                                await command.register(terminalElement);
                                 break;
                             case "--github":
-                                command.registerGithub(terminalElement);
+                                await command.registerGithub(terminalElement);
                                 break;
                             case "--discord":
-                                command.registerDiscord(terminalElement);
+                                await command.registerDiscord(terminalElement);
                                 break;
                             case "--google":
-                                command.registerGoogle(terminalElement);
+                                await command.registerGoogle(terminalElement);
                                 break;
                             case "--twitter":
-                                command.registerTwitter(terminalElement);
+                                await command.registerTwitter(terminalElement);
                                 break;
                             case "--microsoft":
-                                command.registerMicrosoft(terminalElement);
+                                await command.registerMicrosoft(terminalElement);
                                 break;
                             case "--apple":
-                                command.registerApple(terminalElement);
+                                await command.registerApple(terminalElement);
                                 break;
                             case "--email":
-                                command.registerEmail(terminalElement);
+                                await command.registerEmail(terminalElement);
                                 break;
                             default:
                                 if (terminalElement) {
@@ -328,16 +374,16 @@ document.addEventListener("keydown", function (event) {
                         }
                         break;
                     case "profile":
-                        command.profile(terminalElement);
+                        await command.profile(terminalElement);
                         break;
                     case "settings":
-                        command.settings(terminalElement);
+                        await command.settings(terminalElement);
                         break;
                     case "logout":
-                        command.logout(terminalElement);
+                        await command.logout(terminalElement);
                         break;
                     case "search":
-                        command.search(terminalElement);
+                        await command.search(terminalElement);
                         break;
                     default:
                         if (terminalElement) {
@@ -347,12 +393,20 @@ document.addEventListener("keydown", function (event) {
                 }
 
                 inputElement.innerText = "";
+
+                terminalElement?.classList.remove("hidden");
+                sessionElement?.classList.remove("hidden");
+                inputElement.classList.remove("hidden");
+
+                if (cursorElement) {
+                    window.scrollTo(0, document.body.scrollHeight);
+                }
                 break;
             }
             case " ":
                 inputElement.innerText += "\u00A0";
                 break;
-            case /^[a-zA-Z0-9\-\,]$/.test(event.key) && event.key:
+            case /^[-'0-9a-zA-ZÀ-ÿ\-\,\?\!\.]$/.test(event.key) && event.key:
                 inputElement.innerText += event.key;
                 break;
             default:
@@ -366,7 +420,8 @@ document.addEventListener("keydown", function (event) {
         cursorElement?.classList.add("write");
 
         clearTimeout(timeout);
-        timeout = setTimeout(() => { // I don't know why but it's working - an error probably because of Bun
+        timeout = setTimeout(() => {
+            // I don't know why but it's working - an error probably because of Bun
             cursorElement?.classList.remove("write");
         }, 1000);
     }

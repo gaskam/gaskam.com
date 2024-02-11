@@ -71,10 +71,87 @@ a {
   color: var(--cursor-text);
   background: var(--cursor);
   padding: 0 0.2rem;
+  box-shadow: 0 0 3px var(--textblur);
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 .div {
   display: inline;
+}
+
+table {
+  display: inline;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--color);
+  font-family: var(--font);
+  font-size: var(--size);
+}
+
+table th, table td {
+  padding: 0.15rem 1rem;
+  text-align: left;
+}
+
+tbody {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--color);
+  font-family: var(--font);
+  font-size: var(--size);
+  white-space: break-spaces;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.noTableBackground tbody tr:nth-child(odd) {
+  background: transparent;
+}
+
+.noTableBackground tbody tr:nth-child(even) {
+  background: transparent;
+}
+
+.fixedElement {
+  padding: 1.5rem 1rem;
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tableDescription {
+  padding: .5rem 1rem;
+  margin: 0;
+  text-align: start;
+}
+
+.markdown {
+  display: inline-block;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  color: var(--color);
+  font-family: var(--font);
+  font-size: var(--size);
+  background: rgba(255, 255, 255, 0.03);
+  word-break: keep-all;
+}
+
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  margin: 0;
+  padding: 0;
 }
 
 .tile {
@@ -103,6 +180,10 @@ a {
 
 .cursor.write {
   animation: none;
+}
+
+.cursor.hidden {
+  display: none;
 }
 
 @keyframes blink {
@@ -136,6 +217,10 @@ a {
   font-size: var(--size);
 }
 
+.input.hidden {
+  display: none;
+}
+
 .session {
   display: inline;
   position: relative;
@@ -147,11 +232,17 @@ a {
   font-style: italic;
 }
 
+.session.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1400px) {
   body {
     text-shadow: 0 0 2px var(--textblur);
   }
-
+  a {
+    box-shadow: 0 0 2px var(--textblur);
+  }
   .cursor {
     box-shadow: 0 0 2px var(--textblur);
   }

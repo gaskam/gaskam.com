@@ -1,4 +1,13 @@
-export const defaultMessage = "<span class='title'>WELOME TO GASKAM.COM TERMINAL</span>";
+import showdown from "showdown";
+
+const converter = new showdown.Converter({
+    tables: true,
+    excludeTrailingPunctuationFromURLs: true,
+    tasklists: true,
+});
+
+export const defaultMessage =
+    "<span class='title'>WELOME TO GASKAM.COM TERMINAL</span>";
 export const defaultError =
     "<br><br>Command not found, type 'help' to see all commands";
 
@@ -7,40 +16,145 @@ export function help(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
         <br>
-    <br>Here is a list of available commands:
-    <br>
-    <br>help- list all commands except easteregg
-    <br>ls- definded later
-    <br>tree- list of all files of the project (like GitHub)
-    <br>about- Shows some very very useful informations (the boring ones) about us
-    <br>projects- a presentation of all projects   
-    <br>support- support us with a donation
-    <br>github- link to the GitHub page
-    <br>discord- link to the Discord server
-    <br>youtube- link to the YouTube channel 
-    <br>jobs- job opportunities (jobs.gaskam.com)
-    <br>dev- developers area (dev.gaskam.com)
-    <br>lang- change language (en, fr, es, it, de, pt, ru, zh, ja, ko)
-    <br>theme- change theme (light, dark)
-    <br>reload- reload the page
-    <br>events- list of all events
-    <br>community- list of all community projects which use our tools
-    <br>clear- clear the terminal
-    <br>contact- contact us
-    <br>privacy- privacy policy
-    <br>terms- terms of service
-    <br>credits- list of all contributors
-    <br>news- list of all news
-    <br>faq- list of all frequently asked questions
-    <br>ask- ask a question
-    <br>newsletter- subscribe to the newsletter
-    <br>feedback- send us a feedback
-    <br>login - login to the website
-    <br>register- register to the website
-    <br>profile- your profile
-    <br>settings- your settings
-    <br>logout- logout from the website
-    <br>search- search for something
+        <br>Here is the list of all commands | Type '--' to add an argument to the command
+        <br><br>
+        <table class="noTableBackground">
+            <tr>
+                <th>Command</th>
+                <th>Description</th>
+            <tr>
+                <td><a href="">help</a></td>
+                <td>Display all commands</td>
+            </tr>
+            <tr>
+                <td><a href="">clear</a></td>
+                <td>Clear the terminal</td>
+            </tr>
+            <tr>
+                <td><a href="">ls</a></td>
+                <td>Definded later</td>
+            </tr>
+            <tr>
+                <td><a href="">tree</a></td>
+                <td>List of all files of the project (like GitHub)</td>
+            </tr>
+            <tr>
+                <td><a href="">about</a></td>
+                <td>Shows some very very useful informations (the boring ones) about us</td>
+            </tr>
+            <tr>
+                <td><a href="">projects</a></td>
+                <td>A presentation of all projects</td>
+            </tr>
+            <tr>
+                <td><a href="">support</a></td>
+                <td>Support us with a donation</td>
+            </tr>
+            <tr>
+                <td><a href="">github</a></td>
+                <td>Link to the GitHub page</td>
+            </tr>
+            <tr>
+                <td><a href="">discord</a></td>
+                <td>Link to the Discord server</td>
+            </tr>
+            <tr>
+                <td><a href="">youtube</a></td>
+                <td>Link to the YouTube channel</td>
+            </tr>
+            <tr>
+                <td><a href="">jobs</a></td>
+                <td>Job opportunities (jobs.gaskam.com)</td>
+            </tr>
+            <tr>
+                <td><a href="">dev</a></td>
+                <td>Developers area (dev.gaskam.com)</td>
+            </tr>
+            <tr>
+                <td><a href="">lang</a></td>
+                <td>Change language (en, fr, es, it, de, pt, ru, zh, ja, ko)</td>
+            </tr>
+            <tr>
+                <td><a href="">theme</a></td>
+                <td>Change theme (light, dark)</td>
+            </tr>
+            <tr>
+                <td><a href="">reload</a></td>
+                <td>Reload the page</td>
+            </tr>
+            <tr>
+                <td><a href="">events</a></td>
+                <td>List of all events</td>
+            </tr>
+            <tr>
+                <td><a href="">community</a></td>
+                <td>List of all community projects which use our tools</td>
+            </tr>
+            <tr>
+                <td><a href="">clear</a></td>
+                <td>Clear the terminal</td>
+            </tr>
+            <tr>
+                <td><a href="">contact</a></td>
+                <td>Contact us</td>
+            </tr>
+            <tr>
+                <td><a href="">privacy</a></td>
+                <td>Privacy policy</td>
+            </tr>
+            <tr>
+                <td><a href="">terms</a></td>
+                <td>Terms of service</td>
+            </tr>
+            <tr>
+                <td><a href="">credits</a></td>
+                <td>List of all contributors</td>
+            </tr>
+            <tr>
+                <td><a href="">news</a></td>
+                <td>List of all news</td>
+            </tr>
+            <tr>
+                <td><a href="">faq</a></td>
+                <td>List of all frequently asked questions</td>
+            </tr>
+            <tr>
+                <td><a href="">ask</a></td>
+                <td>Ask a question</td>
+            </tr>
+            <tr>
+                <td><a href="">newsletter</a></td>
+                <td>Subscribe to the newsletter</td>
+            </tr>
+            <tr>
+                <td><a href="">feedback</a></td>
+                <td>Send us a feedback</td>
+            </tr>
+            <tr>
+                <td><a href="">login</a></td>
+                <td>Login to the website</td>
+            </tr>
+            <tr>
+                <td><a href="">register</a></td>
+                <td>Register to the website</td>
+            </tr>
+            <tr>
+                <td><a href="">profile</a></td>
+                <td>Your profile</td>
+            </tr>
+            <tr>
+                <td><a href="">settings</a></td>
+                <td>Your settings</td>
+            </tr>
+            <tr>
+                <td><a href="">logout</a></td>
+                <td>Logout from the website</td>
+            </tr>
+            <tr>
+                <td><a href="">search</a></td>
+                <td>Search for something</td>
+            </tr>
+        </table>
         `;
     }
 }
@@ -59,8 +173,7 @@ export function ls(terminalElement: HTMLElement | null) {
 export function tree(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
-    <br>
-    <br>Comming soon!
+    
     `;
     }
 }
@@ -76,61 +189,331 @@ export function about(terminalElement: HTMLElement | null) {
 }
 
 // Projects
-export function projects(terminalElement: HTMLElement | null) {
+export async function projects(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter((repo: any) => repo.name !== ".github")
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all projects
+    <br>
+    <br>
+    `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
+
+        terminalElement.innerHTML += `
+    <br>
     <br>You can sort by language with --typescript, --javascript, --bun, --lua, --python, --cpp
     `;
     }
 }
-export function projectsTypescript(terminalElement: HTMLElement | null) {
+export async function projectsTypescript(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) =>
+                repo.name !== ".github" && repo.language === "TypeScript"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all TypeScript projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
-export function projectsJavascript(terminalElement: HTMLElement | null) {
+export async function projectsJavascript(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) =>
+                repo.name !== ".github" && repo.language === "JavaScript"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all JavaScript projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
-export function projectsBun(terminalElement: HTMLElement | null) {
+export async function projectsBun(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) => repo.name !== ".github" && repo.language === "Bun"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all Bun projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
-export function projectsLua(terminalElement: HTMLElement | null) {
+export async function projectsLua(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) => repo.name !== ".github" && repo.language === "Lua"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all Lua projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
-export function projectsPython(terminalElement: HTMLElement | null) {
+export async function projectsPython(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) => repo.name !== ".github" && repo.language === "Python"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all Python projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
-export function projectsCpp(terminalElement: HTMLElement | null) {
+export async function projectsCpp(
+    terminalElement: HTMLElement | null,
+    gaskamRepos: string
+) {
+    const response = await fetch(gaskamRepos);
+    const data = await response.json();
+    const repositories = data
+        .filter(
+            (repo: any) => repo.name !== ".github" && repo.language === "C++"
+        )
+        .map((repo: any) => ({
+            name: repo.name,
+            description: repo.description,
+            language: repo.language,
+        }));
+
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Here is the list of all C++ projects
+    <br>
+    <br>
     `;
+        const table = document.createElement("table");
+        repositories.forEach((repo: any) => {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.classList.add("fixedElement");
+            const descriptionCell = document.createElement("td");
+            descriptionCell.classList.add("tableDescription");
+            const languageCell = document.createElement("td");
+            languageCell.classList.add("fixedElement");
+
+            nameCell.textContent = repo.name;
+            descriptionCell.textContent = repo.description;
+            languageCell.textContent = repo.language;
+
+            row.appendChild(nameCell);
+            row.appendChild(descriptionCell);
+            row.appendChild(languageCell);
+            table.appendChild(row);
+        });
+
+        terminalElement.appendChild(table);
     }
 }
 
@@ -145,58 +528,97 @@ export function support(terminalElement: HTMLElement | null) {
 }
 
 // GitHub
-export function github(terminalElement: HTMLElement | null) {
+export function github(
+    terminalElement: HTMLElement | null,
+    githubGaskam: string
+) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
-    <br>You can sort by profile with --gaskam, --botmaker, --patafix
+    <br>Page opened in a new tab at <a href="${githubGaskam}" target="blank">${githubGaskam}</a>
+    <br>You can sort by profile with --gaskam, --botmaker, --patafix to get more informations
     `;
     }
+    window.open(githubGaskam, "_blank");
 }
-export function githubGaskam(terminalElement: HTMLElement | null) {
+export async function githubGaskam(
+    terminalElement: HTMLElement | null,
+    githubGaskam: string
+) {
+    const readmeUrl =
+        "https://raw.githubusercontent.com/gaskam-com/.github/main/profile/README.md";
+    const response = await fetch(readmeUrl);
+    const readmeText = await response.text();
+    const htmlText = converter.makeHtml(readmeText);
     if (terminalElement) {
         terminalElement.innerHTML += `
-    <br>
-    <br>Comming soon!
+        <br><div class="markdown">${htmlText}</div>
+        <br>Page opened in a new tab at <a href="${githubGaskam}" target="_blank">${githubGaskam}</a>
     `;
     }
+    window.open(githubGaskam, "_blank");
 }
-export function githubBotmaker(terminalElement: HTMLElement | null) {
+export async function githubBotmaker(
+    terminalElement: HTMLElement | null,
+    githubBotmaker: string
+) {
+    const readmeUrl =
+        "https://raw.githubusercontent.com/Bot-maKeR-0000/ABOUT/main/README.md";
+    const response = await fetch(readmeUrl);
+    const readmeText = await response.text();
+    const htmlText = converter.makeHtml(readmeText);
     if (terminalElement) {
         terminalElement.innerHTML += `
-    <br>
-    <br>Comming soon!
+        <br><div class="markdown">${htmlText}</div>
+        <br>Page opened in a new tab at <a href="${githubBotmaker}" target="_blank">${githubBotmaker}</a>
     `;
     }
+    window.open(githubBotmaker, "_blank");
 }
-export function githubPatafix(terminalElement: HTMLElement | null) {
+export async function githubPatafix(
+    terminalElement: HTMLElement | null,
+    githubPatafix: string
+) {
+    const readmeUrl =
+        "https://raw.githubusercontent.com/PatafixPLTX/ABOUT/main/README.md";
+    const response = await fetch(readmeUrl);
+    const readmeText = await response.text();
+    const htmlText = converter.makeHtml(readmeText);
     if (terminalElement) {
         terminalElement.innerHTML += `
-    <br>
-    <br>Comming soon!
-    `;
+        <br><div class="markdown">${htmlText}</div>
+        <br>Page opened in a new tab at <a href="${githubPatafix}" target="_blank">${githubPatafix}</a>
+`;
     }
+    window.open(githubPatafix, "_blank");
 }
 
 // Discord
-export function discord(terminalElement: HTMLElement | null) {
+export function discord(
+    terminalElement: HTMLElement | null,
+    discordLink: string
+) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Page opened in a new tab at <a href="${discordLink}" target="blank">${discordLink}</a>
     `;
     }
+    window.open(discordLink, "_blank");
 }
 
 // Youtube
-export function youtube(terminalElement: HTMLElement | null) {
+export function youtube(
+    terminalElement: HTMLElement | null,
+    youtubeLink: string
+) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Page opened in a new tab at <a href="${youtubeLink}" target="blank">${youtubeLink}</a>
     `;
     }
+    window.open(youtubeLink, "_blank");
 }
 
 // Jobs
@@ -340,28 +762,78 @@ export function theme(terminalElement: HTMLElement | null) {
     `;
     }
 }
-export function themeDefault(terminalElement: HTMLElement | null) {
-    if (terminalElement) {
-        terminalElement.innerHTML += `
+export function themeDefault(
+    terminalElement: HTMLElement | null,
+    silent: boolean
+) {
+    const prefersDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = prefersDarkMode ? "dark" : "light";
+
+    if (!silent) {
+        if (terminalElement) {
+            terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Setting theme to default (${theme})...
     `;
+        }
+    }
+
+    if (theme === "dark") {
+        themeDark(terminalElement, silent);
+    } else {
+        themeLight(terminalElement, silent);
     }
 }
-export function themeLight(terminalElement: HTMLElement | null) {
-    if (terminalElement) {
-        terminalElement.innerHTML += `
+export function themeLight(
+    terminalElement: HTMLElement | null,
+    silent: boolean
+) {
+    document.documentElement.style.setProperty("--background", "#f5f5f5");
+    document.documentElement.style.setProperty("--color", "#1d1f21");
+    document.documentElement.style.setProperty("--color-secondary", "#666666");
+    document.documentElement.style.setProperty("--textblur", "#C8C8C8");
+    document.documentElement.style.setProperty(
+        "--selection-background",
+        "#1d1f21"
+    );
+    document.documentElement.style.setProperty("--selection-color", "#f5f5f5");
+    document.documentElement.style.setProperty("--cursor", "#1d1f21");
+    document.documentElement.style.setProperty("--cursor-text", "#f5f5f5");
+
+    if (!silent) {
+        if (terminalElement) {
+            terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Theme set to light!
     `;
+        }
     }
 }
-export function themeDark(terminalElement: HTMLElement | null) {
-    if (terminalElement) {
-        terminalElement.innerHTML += `
+export function themeDark(
+    terminalElement: HTMLElement | null,
+    silent: boolean
+) {
+    document.documentElement.style.setProperty("--background", "#1d1f21");
+    document.documentElement.style.setProperty("--color", "#ffffff");
+    document.documentElement.style.setProperty("--color-secondary", "#cccccc");
+    document.documentElement.style.setProperty("--textblur", "#C8C8C8");
+    document.documentElement.style.setProperty(
+        "--selection-background",
+        "#ffffff"
+    );
+    document.documentElement.style.setProperty("--selection-color", "#000000");
+    document.documentElement.style.setProperty("--cursor", "#ffffff");
+    document.documentElement.style.setProperty("--cursor-text", "#000000");
+
+    if (!silent) {
+        if (terminalElement) {
+            terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Theme set to dark!
     `;
+        }
     }
 }
 
@@ -370,9 +842,10 @@ export function reload(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Reloading the page...
     `;
     }
+    location.reload();
 }
 
 // Events
@@ -390,7 +863,7 @@ export function community(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Create your own project with our tools and get featured here! Contact us for more informations.
     `;
     }
 }
@@ -400,7 +873,7 @@ export function contact(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Send us an email at <a href="mailto:contact@gaskam.com>contact@gaskam.com</a>.
     `;
     }
 }
@@ -410,7 +883,10 @@ export function privacy(terminalElement: HTMLElement | null) {
     if (terminalElement) {
         terminalElement.innerHTML += `
     <br>
-    <br>Comming soon!
+    <br>Privacy policy:
+    <br>This is the privacy policy of our website. We are committed to protecting your privacy and ensuring the security of your personal information. We will not share your personal information with any third parties without your consent, except as required by law.
+    <br>By using our website, you consent to the collection and use of your personal information as described in this privacy policy. We may update this policy from time to time, so please check back periodically for any changes.
+    <br>If you have any questions or concerns about our privacy policy, please contact us.
     `;
     }
 }
@@ -472,12 +948,22 @@ export function faq(terminalElement: HTMLElement | null) {
 }
 
 // Ask
-export function ask(terminalElement: HTMLElement | null) {
+export function ask(
+    terminalElement: HTMLElement | null,
+    stringAfterAsk: string
+) {
+    const currentDate = new Date().toISOString();
+    const question = {
+        date: currentDate,
+        question: stringAfterAsk,
+    };
+
     if (terminalElement) {
         terminalElement.innerHTML += `
-    <br>
-    <br>Comming soon!
-    `;
+        <br>
+        <br>Your question is: ${question.question}
+        <br>It has been sent to our team. If we get a lot of the same question, we will add it to the FAQ
+        `;
     }
 }
 
