@@ -8,15 +8,14 @@ const githubLinkBotmaker = "https://github.com/Bot-maKeR-0000/";
 const discordLink = "http://discord.gaskam.com";
 const youtubeLink = "http://youtube.gaskam.com";
 
-
-window.onload = () => {
+globalThis.onload = () => {
     const terminalElement = document.getElementById("terminal");
     const silent = true;
     command.themeDefault(terminalElement, silent);
 };
 
 // Event Listeners
-let timeout: -1;
+let timeout: number | NodeJS.Timeout = -1;
 document.addEventListener("keydown", async function (event) {
     const inputElement = document.getElementById("input");
     const terminalElement = document.getElementById("terminal");
@@ -399,7 +398,7 @@ document.addEventListener("keydown", async function (event) {
                 inputElement.classList.remove("hidden");
 
                 if (cursorElement) {
-                    window.scrollTo(0, document.body.scrollHeight);
+                    globalThis.scrollTo(0, document.body.scrollHeight);
                 }
                 break;
             }
@@ -414,14 +413,13 @@ document.addEventListener("keydown", async function (event) {
         }
 
         if (cursorElement) {
-            window.scrollTo(0, document.body.scrollHeight);
+            globalThis.scrollTo(0, document.body.scrollHeight);
         }
 
         cursorElement?.classList.add("write");
 
         clearTimeout(timeout);
         timeout = setTimeout(() => {
-            // I don't know why but it's working - an error probably because of Bun
             cursorElement?.classList.remove("write");
         }, 1000);
     }

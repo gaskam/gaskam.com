@@ -6,6 +6,12 @@ const converter = new showdown.Converter({
     tasklists: true,
 });
 
+interface Repo {
+    name: string;
+    description: string;
+    language: string;
+}
+
 export const defaultMessage =
     "<span class='title'>WELOME TO GASKAM.COM TERMINAL</span>";
 export const defaultError =
@@ -195,9 +201,9 @@ export async function projects(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
-        .filter((repo: any) => repo.name !== ".github")
-        .map((repo: any) => ({
+    const repositories: Repo[] = data
+        .filter((repo: Repo) => repo.name !== ".github")
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -211,7 +217,7 @@ export async function projects(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -244,12 +250,12 @@ export async function projectsTypescript(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) =>
+            (repo: Repo) =>
                 repo.name !== ".github" && repo.language === "TypeScript"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -263,7 +269,7 @@ export async function projectsTypescript(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -291,12 +297,12 @@ export async function projectsJavascript(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) =>
+            (repo: Repo) =>
                 repo.name !== ".github" && repo.language === "JavaScript"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -310,7 +316,7 @@ export async function projectsJavascript(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -338,11 +344,11 @@ export async function projectsBun(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) => repo.name !== ".github" && repo.language === "Bun"
+            (repo: Repo) => repo.name !== ".github" && repo.language === "Bun"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -356,7 +362,7 @@ export async function projectsBun(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -384,11 +390,11 @@ export async function projectsLua(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) => repo.name !== ".github" && repo.language === "Lua"
+            (repo: Repo) => repo.name !== ".github" && repo.language === "Lua"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -402,7 +408,7 @@ export async function projectsLua(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -430,11 +436,11 @@ export async function projectsPython(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) => repo.name !== ".github" && repo.language === "Python"
+            (repo: Repo) => repo.name !== ".github" && repo.language === "Python"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -448,7 +454,7 @@ export async function projectsPython(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -476,11 +482,11 @@ export async function projectsCpp(
 ) {
     const response = await fetch(gaskamRepos);
     const data = await response.json();
-    const repositories = data
+    const repositories: Repo[] = data
         .filter(
-            (repo: any) => repo.name !== ".github" && repo.language === "C++"
+            (repo: Repo) => repo.name !== ".github" && repo.language === "C++"
         )
-        .map((repo: any) => ({
+        .map((repo: Repo) => ({
             name: repo.name,
             description: repo.description,
             language: repo.language,
@@ -494,7 +500,7 @@ export async function projectsCpp(
     <br>
     `;
         const table = document.createElement("table");
-        repositories.forEach((repo: any) => {
+        repositories.forEach((repo: Repo) => {
             const row = document.createElement("tr");
             const nameCell = document.createElement("td");
             nameCell.classList.add("fixedElement");
@@ -539,7 +545,7 @@ export function github(
     <br>You can sort by profile with --gaskam, --botmaker, --patafix to get more informations
     `;
     }
-    window.open(githubGaskam, "_blank");
+    globalThis.open(githubGaskam, "_blank");
 }
 export async function githubGaskam(
     terminalElement: HTMLElement | null,
@@ -556,7 +562,7 @@ export async function githubGaskam(
         <br>Page opened in a new tab at <a href="${githubGaskam}" target="_blank">${githubGaskam}</a>
     `;
     }
-    window.open(githubGaskam, "_blank");
+    globalThis.open(githubGaskam, "_blank");
 }
 export async function githubBotmaker(
     terminalElement: HTMLElement | null,
@@ -573,7 +579,7 @@ export async function githubBotmaker(
         <br>Page opened in a new tab at <a href="${githubBotmaker}" target="_blank">${githubBotmaker}</a>
     `;
     }
-    window.open(githubBotmaker, "_blank");
+    globalThis.open(githubBotmaker, "_blank");
 }
 export async function githubPatafix(
     terminalElement: HTMLElement | null,
@@ -590,7 +596,7 @@ export async function githubPatafix(
         <br>Page opened in a new tab at <a href="${githubPatafix}" target="_blank">${githubPatafix}</a>
 `;
     }
-    window.open(githubPatafix, "_blank");
+    globalThis.open(githubPatafix, "_blank");
 }
 
 // Discord
@@ -604,7 +610,7 @@ export function discord(
     <br>Page opened in a new tab at <a href="${discordLink}" target="blank">${discordLink}</a>
     `;
     }
-    window.open(discordLink, "_blank");
+    globalThis.open(discordLink, "_blank");
 }
 
 // Youtube
@@ -618,7 +624,7 @@ export function youtube(
     <br>Page opened in a new tab at <a href="${youtubeLink}" target="blank">${youtubeLink}</a>
     `;
     }
-    window.open(youtubeLink, "_blank");
+    globalThis.open(youtubeLink, "_blank");
 }
 
 // Jobs
@@ -767,8 +773,8 @@ export function themeDefault(
     silent: boolean
 ) {
     const prefersDarkMode =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
+        globalThis.matchMedia &&
+        globalThis.matchMedia("(prefers-color-scheme: dark)").matches;
     const theme = prefersDarkMode ? "dark" : "light";
 
     if (!silent) {
