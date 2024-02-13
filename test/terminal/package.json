@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/node": "^20.11.17",
     "@types/showdown": "^2.0.6",
+    "bun-types": "^1.0.26",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   },
