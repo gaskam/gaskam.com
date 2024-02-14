@@ -1,0 +1,22 @@
+{
+  "name": "gaskam.com",
+  "private": true,
+  "version": "0.0.001",
+  "type": "module",
+  "scripts": {
+    "dev": "bunx --bun vite --port 3570 --host",
+    "build": "bunx --bun vite --config vite.config.ts build",
+    "preview": "bunx --bun vite --config vite.config.ts preview"
+  },
+  "devDependencies": {
+    "@types/three": "^0.160.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "gsap": "^3.12.4",
+    "lil-gui": "^0.19.1",
+    "stats.js": "^0.17.0",
+    "three": "^0.160.0"
+  }
+}

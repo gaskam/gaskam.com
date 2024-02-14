@@ -1,0 +1,22 @@
+{
+  "name": "terminal",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "@types/showdown": "^2.0.6",
+    "bun-types": "^1.0.26",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "showdown": "^2.1.0"
+  }
+}
