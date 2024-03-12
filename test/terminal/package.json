@@ -13,7 +13,7 @@
     "@types/showdown": "^2.0.6",
     "bun-types": "^1.0.30",
     "typescript": "^5.4.2",
-    "vite": "^5.1.5"
+    "vite": "^5.1.6"
   },
   "dependencies": {
     "gsap": "^3.12.5",
