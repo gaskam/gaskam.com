@@ -9,7 +9,7 @@
     "preview": "bunx --bun vite --config vite.config.ts preview"
   },
   "devDependencies": {
-    "@types/three": "^0.162.0",
+    "@types/three": "^0.163.0",
     "typescript": "^5.4.3",
     "vite": "^5.2.6"
   },
