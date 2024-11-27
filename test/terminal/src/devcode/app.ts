@@ -1,8 +1,8 @@
 import * as command from "./commands.ts";
 
 // Constants
-const gaskamRepos = "https://api.github.com/orgs/gaskam-com/repos";
-const githubLinkGaskam = "https://github.com/gaskam-com/";
+const gaskamRepos = "https://api.github.com/orgs/gaskam/repos";
+const githubLinkGaskam = "https://github.com/gaskam/";
 const githubLinkPatafix = "https://github.com/PatafixPLTX/";
 const githubLinkBotmaker = "https://github.com/Bot-maKeR-0000/";
 const discordLink = "http://discord.gaskam.com";

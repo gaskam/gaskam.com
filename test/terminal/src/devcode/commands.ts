@@ -554,7 +554,7 @@ export async function githubGaskam(
     githubGaskam: string
 ) {
     const readmeUrl =
-        "https://raw.githubusercontent.com/gaskam-com/.github/main/profile/README.md";
+        "https://raw.githubusercontent.com/gaskam/.github/main/profile/README.md";
     const response = await fetch(readmeUrl);
     const readmeText = await response.text();
     const htmlText = converter.makeHtml(readmeText);
