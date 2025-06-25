@@ -1,6 +1,7 @@
 :root {
 	--color-black: #1f1f1f;
 	--color-white: #f5f5f5;
+	--color-link: #d3d3ff;
 }
 
 * {
@@ -14,7 +15,6 @@ ul, li, a {
 }
 
 htlm {
-	background-color: var(--color-black);
 	width: 100vw;
 	height: 100vh;
 
@@ -27,8 +27,12 @@ html, body, content, footer, div {
 }
 
 body {
+	background: var(--color-black);
 	font-size: 1em;	
 	letter-spacing: 0.1em;
+
+	display: flex;
+	flex-direction: column;
 }
 
 content {
@@ -40,11 +44,13 @@ content {
 }
 
 footer {
+	bottom: 0;
 	align-items: center;
 	justify-content: center;
 	padding: 0.5em;
 	width: 100%;
 
+	position: fixed;
 	display: flex;
 	flex-direction: row;
 }
