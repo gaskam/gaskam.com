@@ -2,19 +2,25 @@
 @import url("./style.css");
 
 ul {
+	width: 100%;
+	max-width: 1600px;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	display: flex;
 	flex-direction: row;
 }
 
 li {
 	margin: 0;
-	padding: 0.5em;
+	padding: 1em;
 }
 
 a {
 	color: var(--color-black);
 	background-color: var(--color-link);
+}
+
+a:hover {
 	cursor: pointer;
+	text-decoration: underline;
 }
