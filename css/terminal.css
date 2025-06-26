@@ -33,7 +33,20 @@ span, input, response, blinker {
 }
 
 @keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+.special {
+	color: var(--color-special);
+	font-weight: bold;
+}
+
+.brand {
+	color: var(--color-brand);
+	font-weight: bold;
 }
