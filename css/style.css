@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 :root {
 	--color-black: #1f1f1f;
 	--color-white: #f5f5f5;
@@ -28,7 +30,7 @@ html, body, content, footer, div {
 }
 
 body {
-	background: var(--color-black);
+	background-color: var(--color-black);
 	color: var(--color-white);
 	font-size: 1em;	
 	line-height: 1.2em;
@@ -57,4 +59,6 @@ footer {
 	flex-direction: row;
 
 	border-top: 1px solid #252525;
+	background: transparent;
+	backdrop-filter: blur(5em);
 }
