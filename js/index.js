@@ -1,4 +1,5 @@
 const KEYS = {
+	BACKSPACE: 8,
 	ENTER: 13,
 	END: 35,
 	HOME: 36,
@@ -43,6 +44,9 @@ $(() => {
 		console.log(key);
 		let text;
 		switch (key) {
+			case KEYS.BACKSPACE:
+				text = pre_input.innerText;
+				pre_input.innerText = text.slice(0, text.length - 1);
 			case KEYS.ENTER:
 				break;
 			case KEYS.END:
