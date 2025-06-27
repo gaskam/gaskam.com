@@ -25,7 +25,8 @@ process.on("SIGINT", () => {
 Bun.serve({
 	development: true,
 	routes: {
-		"/updatesubscribe": async () => {
+		"/updatesubscribe": async (req, server) => {
+			server.timeout(req, 0);
 			let result: Promise<Response> =  new Promise((resolve, _) => {
 				callback = resolve;
 			});

@@ -7,7 +7,12 @@ const KEYS = {
 	UP_ARROW: 38,
 	RIGHT_ARROW: 39,
 	DOWN_ARROW: 40,
+	DELETE: 46,
 };
+
+function parseCommand(text) {
+	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split(' ').filter(i => i): el));
+}
 
 $(() => {
 	const pre_input = $("#pre-input").get(0);
@@ -70,6 +75,11 @@ $(() => {
 				shift_characters(1);
 				break;
 			case KEYS.DOWN_ARROW:
+				break;
+			case KEYS.DELETE:
+				text = post_input.innerText || "\xa0";
+				blinker.innerText = text.slice(0, 1);
+				post_input.innerText = text.slice(1);
 				break;
 		}
 		update_carret();
