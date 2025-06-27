@@ -22,5 +22,6 @@ a {
 
 a:hover {
 	cursor: pointer;
-	text-decoration: underline;
+	color: var(--color-white);
+	background-color: var(--color-link-hover);
 }
