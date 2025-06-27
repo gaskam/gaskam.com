@@ -47,3 +47,13 @@ span, input, response, blinker {
 	color: var(--color-brand);
 	font-weight: bold;
 }
+
+.placeholder {
+	color: #6f6f6f;
+	font-style: italic;
+}
+
+.placeholder.hide {
+	visibility: hidden;
+}
+
