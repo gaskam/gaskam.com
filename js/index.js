@@ -2,7 +2,7 @@
 // To be moved to some better place
 // -------------------------------------------
 const commands = {
-	"help": {
+	help: {
 		description: "Displays help about commands",
 		arguments: "<command> Get help about a specific command",
 		callback: () => {
@@ -10,10 +10,17 @@ const commands = {
 			for (const key in commands) {
 				if (commands.hasOwnProperty(key)) {
 					const command = commands[key];
-					text += ` - ${key}: ${command.description}`;					
+					text += ` - ${key}: ${command.description}<br>`;
 				}
 			}
-			return text;
+			return text.slice(0, text.length - 4);
+		},
+	},
+	echo: {
+		description: "Prints the supplied arguments to stdout",
+		arguments: "arguments... The arguments to print",
+		callback: (args) => {
+			return args.slice(1).join(" ");;
 		},
 	},
 };
@@ -39,7 +46,7 @@ let history = [];
 let history_index = 0;
 
 function parseCommand(text) {
-	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split(' ').filter(i => i): el));
+	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split('\xa0').filter(i => i): el));
 }
 
 function runCommand(text) {
@@ -49,7 +56,7 @@ function runCommand(text) {
 	if (command == undefined) {
 		return `Unknown command: ${command_text[0]}. Check help for a list of all available commands.`;
 	} else {
-		return command.callback();
+		return command.callback(command_text);
 	}
 }
 
