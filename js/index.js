@@ -1,3 +1,26 @@
+// -------------------------------------------
+// To be moved to some better place
+// -------------------------------------------
+const commands = {
+	"help": {
+		description: "Displays help about commands",
+		arguments: "<command> Get help about a specific command",
+		callback: () => {
+			let text = "";
+			for (const key in commands) {
+				if (commands.hasOwnProperty(key)) {
+					const command = commands[key];
+					text += ` - ${key}: ${command.description}`;					
+				}
+			}
+			return text;
+		},
+	},
+};
+// -------------------------------------------
+
+
+
 const KEYS = {
 	BACKSPACE: 8,
 	ENTER: 13,
@@ -11,15 +34,25 @@ const KEYS = {
 };
 
 const NBSP = "\xa0"; // Non-breaking space
+/// @type {[number, number][]}
+let history = [];
+let history_index = 0;
 
 function parseCommand(text) {
 	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split(' ').filter(i => i): el));
 }
 
 function runCommand(text) {
-	const command = parseCommand(text);
-	return "Command output...";
+	const command_text = parseCommand(text);
+
+	const command = commands[command_text[0]];
+	if (command == undefined) {
+		return `Unknown command: ${command_text[0]}. Check help for a list of all available commands.`;
+	} else {
+		return command.callback();
+	}
 }
+
 $(() => {
 	let pre_input = $("#pre-input").get(0);
 	let blinker = $("#blinker").get(0);
@@ -49,6 +82,16 @@ $(() => {
 		} else {
 			blinker.classList.remove("active");
 		}
+	}
+
+	function loadHistory(index) {
+		return pre_input.innerText = "Feature not yet available.";
+		if (index < 0 || index >= history.length) return;
+
+		const text = history[index];
+		pre_input.innerText = text;
+
+		history_index = index;
 	}
 
 	$(document).keydown((event) => {
@@ -87,11 +130,13 @@ $(() => {
 				shift_characters(-1);
 				break;
 			case KEYS.UP_ARROW:
+				loadHistory(history_index - 1);
 				break;
 			case KEYS.RIGHT_ARROW:
 				shift_characters(1);
 				break;
 			case KEYS.DOWN_ARROW:
+				loadHistory(history_index + 1);
 				break;
 			case KEYS.DELETE:
 				text = post_input.innerText || NBSP;
