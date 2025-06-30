@@ -10,14 +10,21 @@ const KEYS = {
 	DELETE: 46,
 };
 
+const NBSP = "\xa0"; // Non-breaking space
+
 function parseCommand(text) {
 	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split(' ').filter(i => i): el));
 }
 
+function runCommand(text) {
+	const command = parseCommand(text);
+	return "Command output...";
+}
 $(() => {
-	const pre_input = $("#pre-input").get(0);
-	const blinker = $("#blinker").get(0);
-	const post_input = $("#post-input").get(0);
+	let pre_input = $("#pre-input").get(0);
+	let blinker = $("#blinker").get(0);
+	let post_input = $("#post-input").get(0);
+
 	function shift_characters(count) {
 		if (count < 0) {
 			const pre_text = pre_input.innerText;
@@ -35,6 +42,7 @@ $(() => {
 			pre_input.innerText += start.slice(0, start.length - 1);
 		}
 	}
+
 	function update_carret() {
 		if (post_input.innerText.length === 0) {
 			blinker.classList.add("active");
@@ -42,6 +50,7 @@ $(() => {
 			blinker.classList.remove("active");
 		}
 	}
+
 	$(document).keydown((event) => {
 		let key = (event.keyCode ? 
 				   event.keyCode : 
@@ -52,7 +61,15 @@ $(() => {
 			case KEYS.BACKSPACE:
 				text = pre_input.innerText;
 				pre_input.innerText = text.slice(0, text.length - 1);
+				break;
 			case KEYS.ENTER:
+				text = pre_input.innerText + blinker.innerText + post_input.innerText;
+				text = text.trim();
+				pre_input.insertAdjacentHTML("beforebegin", `<span class"command">${text}</span><br><span class="response">${runCommand(text)}</span><br><span id="prompt" class="prompt">[gaskam.com] $ </span>`);
+
+				pre_input.innerText = "";
+				blinker.innerText = NBSP;
+				post_input.innerText = "";
 				break;
 			case KEYS.END:
 				text = pre_input.innerText + blinker.innerText + post_input.innerText;
@@ -77,7 +94,7 @@ $(() => {
 			case KEYS.DOWN_ARROW:
 				break;
 			case KEYS.DELETE:
-				text = post_input.innerText || "\xa0";
+				text = post_input.innerText || NBSP;
 				blinker.innerText = text.slice(0, 1);
 				post_input.innerText = text.slice(1);
 				break;
@@ -91,9 +108,11 @@ $(() => {
 			   event.which);
 
 		// Check if character is visible
-		if (key >= 32) {
+		if (key > 32) {
 			let character = String.fromCharCode(key);
 			pre_input.innerText += character;
+		} else if (key == 32) { // key is space
+			pre_input.innerText += NBSP;
 		}
 	});
 });

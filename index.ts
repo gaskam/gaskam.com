@@ -7,6 +7,7 @@ const watcher = watch(
 	{ recursive: true },
 	(_event, _filename) => {
 		if (typeof callback === "function") {
+			console.clear();
 			console.log("Files changed, reloading...");
 			/// @ts-ignore
 			callback(new Response("Files updated" ));
@@ -22,7 +23,7 @@ process.on("SIGINT", () => {
 	process.exit(0);
 });
 
-Bun.serve({
+const server = Bun.serve({
 	development: true,
 	routes: {
 		"/updatesubscribe": async (req, server) => {
@@ -38,3 +39,5 @@ Bun.serve({
 		return new Response(Bun.file(url.pathname.slice(1) || "index.html"));
 	},
 });
+
+console.log(`Server is running on: http://localhost:${server.port}`);
