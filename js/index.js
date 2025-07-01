@@ -77,6 +77,13 @@ function parseCommand(text) {
 	return [].concat(...text.split('"').map((el,idx) => (idx % 2 == 0) ? el.split('\xa0').filter(i => i): el));
 }
 
+let unsafe_div = document.createElement("div");
+
+function sanitizeHtml(text) {
+	unsafe_div.innerHTML = text;
+	return unsafe_div.textContent;
+}
+
 function runCommand(text) {
 	const command_text = parseCommand(text);
 
@@ -95,24 +102,24 @@ $(() => {
 
 	function shift_characters(count) {
 		if (count < 0) {
-			const pre_text = pre_input.innerText;
+			const pre_text = pre_input.textContent;
 			let end = pre_text.slice(pre_text.length + count);
-			pre_input.innerText = pre_text.slice(0, pre_text.length + count);
-			end += blinker.innerText;
-			blinker.innerText = end.slice(0, 1);
-			post_input.innerText = end.slice(1) + post_input.innerText;
+			pre_input.textContent = pre_text.slice(0, pre_text.length + count);
+			end += blinker.textContent;
+			blinker.textContent = end.slice(0, 1);
+			post_input.textContent = end.slice(1) + post_input.textContent;
 		} else {
-			const post_text = post_input.innerText;
+			const post_text = post_input.textContent;
 			let start = post_text.slice(0, count);
-			post_input.innerText = post_text.slice(count);
-			start = blinker.innerText + start;
-			blinker.innerText = start.slice(start.length - 1);
-			pre_input.innerText += start.slice(0, start.length - 1);
+			post_input.textContent = post_text.slice(count);
+			start = blinker.textContent + start;
+			blinker.textContent = start.slice(start.length - 1);
+			pre_input.textContent += start.slice(0, start.length - 1);
 		}
 	}
 
 	function update_carret() {
-		if (post_input.innerText.length === 0) {
+		if (post_input.textContent.length === 0) {
 			blinker.classList.add("active");
 		} else {
 			blinker.classList.remove("active");
@@ -120,11 +127,11 @@ $(() => {
 	}
 
 	function loadHistory(index) {
-		return pre_input.innerText = "Feature not yet available.";
+		return pre_input.textContent = "Feature not yet available.";
 		if (index < 0 || index >= history.length) return;
 
 		const text = history[index];
-		pre_input.innerText = text;
+		pre_input.textContent = text;
 
 		history_index = index;
 	}
@@ -137,29 +144,30 @@ $(() => {
 		let text;
 		switch (key) {
 			case KEYS.BACKSPACE:
-				text = pre_input.innerText;
-				pre_input.innerText = text.slice(0, text.length - 1);
+				text = pre_input.textContent;
+				pre_input.textContent = text.slice(0, text.length - 1);
 				break;
 			case KEYS.ENTER:
-				text = pre_input.innerText + blinker.innerText + post_input.innerText;
+				text = pre_input.textContent + blinker.textContent + post_input.textContent;
+				text = sanitizeHtml(text);
 				text = text.trim();
-				pre_input.insertAdjacentHTML("beforebegin", `<span class"command">${text}</span><br><span class="response">${runCommand(text)}</span><br><span id="prompt" class="prompt">[gaskam.com] $ </span>`);
+				pre_input.insertAdjacentHTML("beforebegin", `<span class="command">${text}</span><br><span class="response">${runCommand(text)}</span><br><span id="prompt" class="prompt">[gaskam.com] $ </span>`);
 
-				pre_input.innerText = "";
-				blinker.innerText = NBSP;
-				post_input.innerText = "";
+				pre_input.textContent = "";
+				blinker.textContent = NBSP;
+				post_input.textContent = "";
 				break;
 			case KEYS.END:
-				text = pre_input.innerText + blinker.innerText + post_input.innerText;
-				pre_input.innerText = text.slice(0, text.length - 1);
-				blinker.innerText = text.slice(text.length - 1);
-				post_input.innerText = "";
+				text = pre_input.textContent + blinker.textContent + post_input.textContent;
+				pre_input.textContent = text.slice(0, text.length - 1);
+				blinker.textContent = text.slice(text.length - 1);
+				post_input.textContent = "";
 				break;
 			case KEYS.HOME:
-				text = pre_input.innerText + blinker.innerText + post_input.innerText;
-				pre_input.innerText = "";
-				blinker.innerText = text.slice(0, 1);
-				post_input.innerText = text.slice(1);;
+				text = pre_input.textContent + blinker.textContent + post_input.textContent;
+				pre_input.textContent = "";
+				blinker.textContent = text.slice(0, 1);
+				post_input.textContent = text.slice(1);;
 				break;
 			case KEYS.LEFT_ARROW:
 				shift_characters(-1);
@@ -174,9 +182,9 @@ $(() => {
 				loadHistory(history_index + 1);
 				break;
 			case KEYS.DELETE:
-				text = post_input.innerText || NBSP;
-				blinker.innerText = text.slice(0, 1);
-				post_input.innerText = text.slice(1);
+				text = post_input.textContent || NBSP;
+				blinker.textContent = text.slice(0, 1);
+				post_input.textContent = text.slice(1);
 				break;
 		}
 		update_carret();
@@ -190,9 +198,9 @@ $(() => {
 		// Check if character is visible
 		if (key > 32) {
 			let character = String.fromCharCode(key);
-			pre_input.innerText += character;
+			pre_input.textContent += character;
 		} else if (key == 32) { // key is space
-			pre_input.innerText += NBSP;
+			pre_input.textContent += NBSP;
 		}
 	});
 });
