@@ -23,6 +23,34 @@ const commands = {
 			return args.slice(1).join(" ");;
 		},
 	},
+	contact_us: {
+		description: "Send us an email",
+		callback: () => {
+			window.open("mailto:contact@gaskam.com", "_self");
+			return 'Opened contact link. If you want to copy the email address manually: <a href=mailto:contact@gaskam.com>contact@gaskam.com</a>';
+		}
+	},
+	github: {
+		description: "Open our github page",
+		callback: () => {
+			window.open("https://github.gaskam.com");
+			return "Opened our github page in a new tab";
+		}
+	},
+	youtube: {
+		description: "Open our youtube page",
+		callback: () => {
+			window.open("https://youtube.gaskam.com");
+			return "Opened our youtube page in a new tab";
+		}
+	},
+	buy_us_a_bun: {
+		description: "If you want to donate some money so we can afford a bun",
+		callback: () => {
+			window.open("https://donate.gaskam.com");
+			return "Thank you! Opened the donation page in a new tab";
+		}
+	},
 };
 // -------------------------------------------
 
@@ -54,7 +82,7 @@ function runCommand(text) {
 
 	const command = commands[command_text[0]];
 	if (command == undefined) {
-		return `Unknown command: ${command_text[0]}. Check help for a list of all available commands.`;
+		return `Unknown command: "${command_text[0]}". Check help for a list of all available commands.`;
 	} else {
 		return command.callback(command_text);
 	}
